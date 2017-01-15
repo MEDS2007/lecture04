@@ -4,9 +4,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>MEDS2007 Website, Lecture 01</title>
+	<title>MEDS2007 Website, Lecture 02</title>
 
-	<meta name="description" content="MEDS2007, Lecture 1">
+	<meta name="description" content="MEDS2007, Lecture 2">
 	<meta name="author" content="Dave Everitt">
 
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -17,6 +17,27 @@
 	<link rel="stylesheet" href="css/theme/moon.css"><!-- beige -->
 	<link rel="stylesheet" href="lib/css/zenburn.css"><!-- syntax highlighting of code -->
 	<link rel="stylesheet" href="css/ctec3905.css"><!-- custom styles -->
+	<style>
+		.ia-diagram {
+			position: relative;
+			box-sizing: border-box;
+      text-align: center;
+			top: .6em;
+			padding: 8px;
+			width: 360px;
+			height: 350px;
+			background: #ccc;
+			color: #666;
+			float: left;
+		}
+		.ia-diagram div {
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			box-sizing: border-box;
+			border-radius: 50%;
+		}
+	</style>
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -34,7 +55,7 @@
 			<section data-markdown>
 				## MEDS2007: Website
 				
-				# **Lecture 1** 
+				# **Lecture 2** 
 
 				**Dave Everitt**
 				deveritt@dmu.ac.uk
@@ -42,270 +63,298 @@
 
 			<section>
 				<section data-markdown>
-          # HTML, CSS, JavaScript
+          # **ACCESS**, **INFORMATION** & **DESIGN**
           
-          ![HTML, CSS, JavaScript logos](images/html-css-js.png)
-          
-          - HTML: **what** - defines *content*
-          - CSS: **how** - specifies *layout/presentation*
-          - JavaScript: **when** - programmes *behaviour*
-        </section>
-
-        <section data-markdown>
-          # **HTML** + **CSS**
-          
-          These will be your **main focus**.
-          
-          But before we go further, a little **background information** on these two web technologies…
-        </section>		
-      </section>
-
-      <section>
-        <section data-markdown class="crammed left-align">
-          # A brief **history** of HTML
-
-          - **SGML** is the basis (title, h1-6, p, ol, ul...)
-          - **1965** Ted Nelson, hyperlink
-          - **1987** Hypercard uses local hyperlinks (Bill Atkinson, Apple)
-          - **HTML** devised by Tim Berner-Lee (TBL) when at CERN
-          - **1989** TBL creates HTML/www on NeXT (for **collaborative research**)
-          - **1989** global hypertext project - the **W**orld**W**ide**W**eb (www)
-          - **1991** the Internet first carries the www
-
-          [The birth of the web (CERN)](https://home.cern/topics/birth-web)  
-					Dave Raggett, 1998, (co-editor, HTML 4 specification) [A history of HTML](https://www.w3.org/People/Raggett/book4/ch02.html)
-        </section>		
-
-        <section>
-          <p><a href="https://www.w3.org/MarkUp/tims_editor">original screenshot of Tim Berners-Lee's browser</a></p>
-          <iframe style="height:640px; width:100%" src="https://www.w3.org/MarkUp/tims_editor"></iframe>
-        </section>
-
-        <section data-markdown>
-          # Mosaic (1993)
-          
-          The first visual web browser 
-          
-          ![The NCSA browser](images/NCSA-Mosaic.png)
-        </section>
-
-        <section data-markdown>
-          # Mosaic (again)
-          
-          The first visual web browser (on a Mac)
-          
-          ![The NCSA browser](images/NCSAMosaic1-Mac.png)
-        </section>
-
-        <section data-markdown>
-          # Latest version: **HTML5**
-          
-          *Semantic* tags (they **do** what they **say**) e.g.  
-					`header`, `figure`+`figcaption`, `nav`, `section`, `footer`…
-          
-          For a great infographic see  
-          [The History of HTML5, Matt Silverman, 2012](http://mashable.com/2012/07/17/history-html5/)
-        </section>
-
-      </section>		
-
-      <section>
-        <section data-markdown class="crammed left-align">
-          # A **history** of CSS: 1
-          
-          - **1994** first draft of **Cascading HTML Style Sheets**, Håkon Wium Lie (CERN)
-          - **1995** discussions on the www-style mailing list influence CSS development
-          - HTML removed from name, style sheets also for **other markup languages**
-          - **1995** W3C HTML Editorial Review Board set up for HTML specifications
-          - **1996** Microsoft Internet Explorer is the first browser to support CSS
-          - **1996** CSS Level 1 W3C Recommendation (CSS1)
-          - **1996** W3C forms Cascading Style Sheets and Formatting Properties Working Group
-          
-          [A Brief History of CSS](http://www.css-class.com/a-brief-history-of-css/)  
-        </section>		
-
-        <section data-markdown class="left-align">
-          # A **history** of CSS: 1.1
-          
-          > Tim Berners-Lee wrote his NeXT browser/editor in such a way that he could determine the style with a simple style sheet. However, he didn't publish the syntax for the style sheets, considering it a matter for each browser to decide how to best display pages to its users.
-          
-          more…
-        </section>
-
-        <section data-markdown class="left-align">
-          # A **history** of CSS: 1.2
-          
-          > In 1993, NCSA Mosaic, the browser that made the Web popular, came out. Stylewise, however, it was a backward step because it only allowed its users to change certain colors and fonts […] writers of Web pages complained that they didn't have enough influence over how their pages looked. One of the first questions from an author new to the Web was how to change fonts and colors of elements.
-          
-          [A brief history of CSS until 2016](https://www.w3.org/Style/CSS20/history.html)
-        </section>
-
-        <section data-markdown class="crammed left-align">
-          # A **history** of CSS: 1.3
-          
-          there were **tensions** between authors and implementors:
-          
-          > …it has been a constant source of delight for me over the past year to get to continually tell hordes (literally) of people who want to -- strap yourselves in, here it comes -- control what their documents look like in ways that would be trivial in TeX, Microsoft Word, and every other common text processing environment: "**Sorry, you're screwed.**"
-          
-          —Marc Andreessen, 1994, programmer NCSA Mosaic browser. Later as co-founder of the Netscape browser, he was more eager to please authors. In 1994, he announced the first beta release of Mozilla (later Netscape Navigator, and the code behind **Firefox**). In [The CSS saga](https://www.w3.org/Style/LieBos2e/history/Overview.html), chapter in: Håkon Wium Lie and Bert Bos, "Cascading Style Sheets, designing for the Web".
-        </section>
-
-        <section data-markdown class="crammed left-align">
-          # A **history** of CSS: 2
-          
-          - **1997** CSS Working Group creates CSS 2 specification
-          - **1998** CSS level 2 published as a W3C Recommendation (CSS2)
-          - **1998** the Opera browser released which supports CSS
-          - **2000** W3C CSS3 Working Draft
-          - **2011** W3C releases CSS 2.1 fixed errors, better browser matching
-          - **2014** W3C Candidate Recommendation CSS Syntax Module Level 3
-          - **2017** CSS 3 and browser support continues to evolve…
-          
-          Warning! TMI: [W3C CSS Syntax Module Level 3](https://www.w3.org/TR/css-syntax-3/) (scroll to see the comments)
+          - Access: **who** can use your site?
+          - Design: **how** does the site appear?
+          - Information: **what** is the content?
         </section>
       </section>
 
 			<section>
 				<section data-markdown class="left-align">
-					# **CSS 1** (1996)
+					# Accessibility **1**
+
+					“Whatever your needs or preferences, there’s almost certainly a way to access the web.
+
+					**Theoretically**.
+
+					In reality, the web is a mess… accessibility options tend to be forgotten or stripped away, …though accessible websites and apps can… still be beautiful, innovative… user-friendly.
+
+					…**This is a human rights issue**. Disabled people *need* these options in order to access the web.”
+
+					Mischa Andrews: [The inaccessible web](https://uxdesign.cc/the-inaccessible-web-how-we-got-into-this-mess-7cd3460b8e32)  
+				</section>
+
+				<section data-markdown>
+					> “The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect”
+
+					Tim Berners-Lee (1997)  
+					[Web Accessibility Initiative announcement](https://www.w3.org/Press/IPO-announce)
+				</section>
+
+				<section data-markdown class="left-align">
+					## Facts and information
+
+					- **It’s been built into the web from the start**  
+					W3C (2005) [Introduction to Web Accessibility](https://www.w3.org/WAI/intro/accessibility.php)
+					- The **Disability Equality Act (2010)** is law—you could be [sued for discrimination](http://www.seqlegal.com/blog/website-accessibility-and-equality-act-2010) if your website does not meet certain [accessibility standards](https://www.abilitynet.org.uk/expert-resources/web-accessibility-resources)
+
+					“the **duty to make reasonable adjustments** requires providers to **ensure disabled people can access services**. Service providers should **anticipate the needs** of potential disabled customers…”  
+					—adapted from [Disabled access to websites under UK law](http://www.out-law.com/page-330)
+				</section>
+			</section>
+
+			<section>
+				<section data-markdown class="left-align">
+					# Accessibility **2**
 					
-					Supports: **font** properties, **text** attributes, text **alignment**, **tables**, **images**, text and background **color**, word/letter/line **spacing**, **margins**, **borders**, **padding**, **positioning**, **id**entification and **class**ification of groups of CSS styles.
+					- Needs to be **incorporated from the start** of a project
+					- Good **Information Architecture** and **navigation** help
+					- HTML5 **semantic elements** are crucial e.g.:
 					
-					In a **CSS file** (.css):
-					```css
-					#my-id { background-color: green; }
-					.my-class { text-align: center; }
-					```
-					
-					In an **HTML file** (.html):
 					```html
-					&lt;element id="my-id"&gt;
-					&lt;body class="my-class"&gt;
+&lt;header>, &lt;nav>, &lt;main>, &lt;section>, &lt;figure>, &lt;footer>…
 					```
 				</section>
 
 				<section data-markdown class="left-align">
-					# **CSS 2** (1998)
-					
-					New capabilities including: **z-index**, **media** types (e.g. braille, print, speech, projection, tv, etc.), **bidirectional** text, absolute, relative and fixed **positioning**, support for **aural** style sheets.
+					## Resources and research
+
+					- [WebAim](http://webaim.org/intro/)—**see this site first!**
+					- [Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
+					- [Notes on Using ARIA in HTML](https://www.w3.org/TR/aria-in-html/)—see the [1st to 5th](https://www.w3.org/TR/aria-in-html/#first-rule-of-aria-use) rules!
+					- [How to Use ARIA Effectively with HTML5](https://www.sitepoint.com/how-to-use-aria-effectively-with-html5/)
+				</section>
+			</section>
+
+			<section>
+				<section data-markdown class="left-align">
+					# INFORMATION ARCHITECTURE (IA): **1**
+          
+					> If you’ve ever tried to use something and thought, “where am I supposed to go next?” or “this doesn’t make any sense,” you are encountering an issue with an information architecture.  
+					—[What is Information Architecture?](http://www.iainstitute.org/what-is-ia)
 				</section>
 
 				<section data-markdown class="left-align">
-					# **CSS 3** (2000, 2014…)
+					## What is **IA**?
 					
-					Broken into **modules**. 2011-2012, four modules released as formal recommendations: color, selectors level 3, namespaces and **media queries**.
-					
-					CSS3 now includes:  
-					**transitions**, **animation** and **transformations**.
-					
-					Now CSS level 3 is separated into modules, there will be **no single CSS 4 release**—see the [W3C CSS Snapshot 2015](https://www.w3.org/TR/css3-roadmap/)
-          
-					See W3Schools (*separate* from the W3C) guide for:  
-					[CSS transitions](http://www.w3schools.com/css/css3_transitions.asp), [CSS transforms](http://www.w3schools.com/cssref/css3_pr_transform.asp) and [CSS animation](http://www.w3schools.com/css/css3_animations.asp)
+					- The **art and science** of structuring and classifying websites/intranets/apps to help people find and manage information
+					- A **discipline** and community of practice bringing principles of design and architecture to online development
+
+					Entire university courses cover Information Architecture—[search for "library science and information architecture"](https://www.google.co.uk/search?q=librry+science+and+information+archtectre&oq=librry+science+and+information+archtectre&aqs=chrome..69i57.7711j0j7&sourceid=chrome&ie=UTF-8#q=library+science+and+information+architecture)
 				</section>
-      </section>
 
-      <section>
-				<section data-markdown class="crammed left-align">
-					# HOW WEBSITES WORK: 1
+				<section class="left-align">
+					<h2>How did <strong>IA</strong> begin?</h2>
+
+					<img style="float:left;" src="images/ia/information-architecture-book.jpg" alt="Information Architecture book cover">
+
+					<p style="width: 58%; float: right; margin-top: .2em;">In 1998 Peter Morville and co-author Louis Rosenfeld wrote <a href="https://wordery.com/information-architecture-louis-rosenfeld-9781491911686?currency=GBP" title="Cheapest copy of 'Information Architecture' we could find">Information Architecture for the World Wide Web</a>
+					<br>
+					(4th edition 2015)
+					<br>
+					<br>
+					Known as <em>The Polar Bear Book</em> it is considered to be <strong>the</strong> essential text on the subject.</p>
+				</section>
+
+				<section data-markdown class="left-align">
+					## Origins: **library science**
 					
-					**back end (you don't need to know this):**  
-					‘server’—handles your request for a page, does any necessary processing or retrieval (say from a database) finds images and other files, and sends it all to your browser.
+					- The development of “**knowledge-organization** systems”
+					- Study of how to **categorize**, **catalogue**, **locate** resources
+				</section>
+
+				<section data-markdown class="left-align">
+					## Origins: **Cognitive Psychology**
 					
-					**front end (you will learn this):**  
-					‘client’ (e.g. usually a web browser)—receives content from the server and displays the pages you view, renders the HTML, applies CSS styles and handles JavaScript.
-        </section>
+					- **Cognitive load**: how much information we can process at any time—avoiding information overload.
+					- **Mental models**: the assumptions users have—information is easier to discover in familiar places.
+					- **Decision making**: the cognitive process of making a choice or selecting an option—IA helps make decisions by providing contextual information at key points.
 
-				<section data-markdown class="left-align">
-          # HOW WEBSITES WORK: 2
-          
-          An HTML5 document begins with a **document type**:
-          
-          ```html
-          &lt;!doctype html&gt;
-          ```
-          then the **main** (parent) element:
-          ```html
-          &lt;html&gt;
-          ```
-          Then some **information** the browser needs:
-          ```html
-          &lt;head&gt;
-					```
-          Then what actually **appears** in the browser:
-          ```html
-          &lt;body&gt;
-          ```
-        </section>
+					[Complete Beginners Guide to Information Architecture](http://www.uxbooth.com/articles/complete-beginners-guide-to-information-architecture/)
+				</section>
+			</section>
 
-				<section data-markdown class="left-align">
-          # HOW WEBSITES WORK: 3
+			<section>
+				<section class="left-align">
+					<h1>IA: <strong>2</strong></h1>
           
-          So **all** websites have the following **HTML tags**:
-          
-          ```html
-          &lt;!doctype html&gt;
-          &lt;html&gt;
-            &lt;head&gt;
-            &lt;/head&gt;
-            &lt;body&gt;
-            &lt;/body&gt;
-          &lt;/html&gt;
-          ```
-        </section>
+					<div class="ia-diagram">
+						<div style="left: 76px; top: 8px; background: rgba(256,100,100,0.5); line-height: 170px;">Users</div>
+						<div style="bottom: 8px; left: 8px; background: rgba(100,256,100,0.5); line-height: 240px; transform: rotate(32deg);">Content</div>
+						<div style="bottom: 8px; right: 8px; background: rgba(100,100,256,0.5); line-height: 240px; transform: rotate(-32deg);">Context</div>
+						<strong style="position: absolute; text-align: center; left: 43%; top: 44%; font-size: 1.5em; color: #444; text-shadow: 0 0 4px #fff">IA</strong>
+					</div>
 
-				<section data-markdown class="left-align">
-          # HOW WEBSITES WORK: 4
-          
-          Most content is between **matching pairs** of HTML tags:
-          
-          ```html
-          &lt;p&gt;My text in a paragraph&lt;/p&gt;
-          ```
-        </section>
+					<ul style="width: 56%; margin-left: 10px; margin-top: -0.28em; float: right;">
+						<li><strong>Users</strong>: who they are, what are their information-seeking behaviours and needs</li>
+						<li><strong>Content</strong>: volume, format, metadata, structure, labels (e.g. menus)</li>
+						<li><strong>Context</strong>: business model, aim of website, cultural background, constraints</li>
+					</ul>
+				</section>
 
-				<section data-markdown class="left-align">
-          # HOW WEBSITES WORK: 5
-          
-          An HTML **hyperlink** looks like this:
-          
-          ```html
-          &lt;a href="another-page.html"&gt;Go to another page&lt;/a&gt;
-          ```
-        </section>
-        
-				<section data-markdown class="left-align">
-          # HOW WEBSITES WORK: 6
-          
-          An HTML **image tag** looks like this:
-          
-          ```html
-          &lt;img src="my-images/a-lovely-cat.png"&gt;
-          ```
-          
-          The `img` tag doesn't need 'closing'.
-        </section>
+				<section title="Classic Information Architecture infographic by Louis Rosenfeld" data-background-image="images/ia/rosenfeld-users-content-context.png" data-background-size="800px"><div>&nbsp;</div></section>					
+				<section title="The Elements of User Experience by Jesse James Garrett Rosenfeld" data-background-image="images/ia/elements-of-ui-garrett.png" data-background-size="800px"><div>&nbsp;</div></section>					
 			</section>
 
 			<section data-markdown class="left-align">
-				# SUMMARY:
+				# IA: **3**
+
+				## the information backbone of a website
 				
-				- **HTML** you only need the basics
-				- **CSS** learn the syntax, use only what you need
-				- **indent your code** as you go, with 2 spaces
-				- **JavaScript** mainly for advanced interaction
+				- **Content inventory/audit**  
+					locate and identify and check site content
+				- **Information grouping**  
+					connect content with user-centered relationships
+				- **Taxonomy development**  
+					a controlled/consistent vocabulary throughout  
+
+				Jennifer Cardello: [The Difference Between IA and Navigation](https://www.nngroup.com/articles/ia-vs-navigation/)  
 			</section>
 
-			<section data-markdown class="left-align">
-        # ONLINE RESOURCES
+			<section>
+				<section data-markdown class="left-align">
+					# IA: **4**
+					
+					## What is Architecture?
 
-        Two **reliable** sources for quick **reference** and **learning**:
+					From Cal Henderson, [Building Scalable Web Sites](http://shop.oreilly.com/product/9780596102357.do) (2006)
 
-        - [W3Schools HTML](http://www.w3schools.com/html/)
-        - [W3Schools CSS](http://www.w3schools.com/css/)
+					**if buildings were like software**, the architect would be involved in the actual building process, from laying the foundations right through to installing the fixtures. …starting with a couple of rooms and some basic amenities, some people would… start living there before the building was complete. When it looked like the building work was about to finish …more people would turn up and start living there, too.
+				</section>
 
-        - [Codecademy HTML Fundamentals](https://www.codecademy.com/courses/html-one-o-one/0/1)
-        - [Codecademy HTML & CSS for Beginners](https://www.codecademy.com/en/tracks/htmlcss)
+				<section data-markdown class="left-align">
+					## Building around users
+
+					…new residents would need **new features**—more bedrooms… a swimming pool, a basement… The architect would design these… features, augmenting the original design. But when it came to building them, the **current residents wouldn't leave**. They'd continue living in the house even while it was extended, all the time complaining about the noise and dust from the building work.
+
+					In fact… **more people would move in** while the extensions were being built. By the time the modifications were complete, more would be needed to house the newcomers and keep them happy.
+				</section>
+
+				<section data-markdown class="left-align">
+					## Plan from the start
+					
+					The key… is **planning for these issues from the beginning**. If the architect … started out by building a huge, complex house, it would be **overkill**. By the time it was ready, the residents would have gone elsewhere to live in a smaller house built in a fraction of the time.
+
+					If we build in such a way that extending our house takes too long then our **residents might move elsewhere**, We need to know how to start at the right scale and allow our house to be **extended as painlessly as possible**.
+				</section>
+
+				<section data-markdown class="left-align">
+					## Minimize effort
+
+					That's not to say that we're going to get anything right the first time. In the [scaling](https://www.nngroup.com/articles/scaling-user-interfaces/ "Scaling User Interfaces: An Information-Processing Approach to Multi-Device Design") of a typical application, every aspect and feature is probably going to be revisited and [refactored](http://www.refactoring.com/ "a change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior").
+
+					That's fine—the task of an application architect is to **minimize the time it takes to [refactor](https://sourcemaking.com/refactoring "A big site about refactoring") each component**, through careful initial and ongoing design.
+				</section>
+			</section>
+
+			<section class="left-align">
+				<section data-markdown>
+					# 4 BASIC **DESIGN** PRINCIPLES
+					
+					- **P**roximity
+					- **A**lignment
+					- **R**epetition
+					- **C**ontrast
+
+					(Mnemonic: the **reverse of CRAP** :-)
+				</section>
+
+				<section data-markdown>
+					# **P**roximity
+					**Proximity** sets up *visual cues* that group similar items, suggesting how to ‘read’ content.
+
+					- Group **related items** with each other
+					- Use **common styles** to connect grouped items
+					- Sort **complex content** into groups for legibility
+
+					The [BBC iPlayer website](http://www.bbc.co.uk/iplayer) uses proximity and containment to group related items
+
+					The Guardian website groups ‘most popular’ news stories
+				</section>
+
+				<section title="a screenshot of the BBC iPlayer website" data-background-image="images/bbc-iplayer.png" data-background-size="900px"><div>&nbsp;</div></section>					
+				<section title="a screenshot of the Guardian website" data-background-image="images/guardian.png" data-background-size="900px"><div>&nbsp;</div></section>
+
+				<section data-markdown>
+					# **A**lignment
+
+					- Nothing should be placed on the page arbitrarily
+					- Every item is connected visually with other page elements
+
+					Alignment enables page elements to be seen as **part of the whole**, creating a **holistic feel** to all the various pieces of information.
+
+					A strict use of alignment on the [Oslo-based design agency Heydays](http://heydays.no/) gives a pleasing sense of coherence and simplicity.
+				</section>
+
+				<section title="An obvious example of a grid-based website" data-background-image="images/heydays.jpg" data-background-size="800px"><div>&nbsp;</div></section>					
+
+				<section data-markdown class="left-align">
+					# **A**lignment: grids
+
+					Grids are the **primary method** for achieving **alignment**.
+
+					- **The core text** on the history and use of grids in design is: Khoi Vinh and Mark Boulton (2007) [Grids Are Good](http://www.slideshare.net/huer1278ft/grids-are-good-right)
+					- Also see Vitaly Friedman (2007) [Designing With Grid-Based Approach](https://www.smashingmagazine.com/2007/04/designing-with-grid-based-approach/), Smashing Magazine
+				</section>
+
+				<section title="An example image of a column-based grid" data-background-image="images/grids/grid-01.jpg" data-background-size="800px"><div>&nbsp;</div></section>					
+				<section title="a vertical typography-based grid" data-background-image="images/grids/grid-02.jpg" data-background-size="800px"><div>&nbsp;</div></section>					
+
+				<section data-markdown>
+          # **R**epetition
+          
+          - Repeat **design themes** throughout the interface
+          - Repetition provides **consistency** across design elements
+          - Consistent sizing and proportions strengthen **style**
+          
+          Use:
+          
+          - site-wide **templates** and **visual elements** for consistency
+          - **style rules** for content e.g. common image sizes (at least widths), colour palette
+          - no more than **two font families**: one for headings, the other for body text
+				</section>
+
+				<section title="An example of repetition in heading style" data-background-image="images/karl-anders.png" data-background-size="600px"><div>&nbsp;</div></section>
+				<section title="Repetition used to display columns of images and titles" data-background-image="images/creative-depart.jpg" data-background-size="700px"><div>&nbsp;</div></section>
+
+				<section data-markdown>
+					# **C**ontrast
+
+					- Make **distinctly different** items *look* different
+					- Contrast makes content appear **visually inviting**
+
+					There are many ways to create contrast. For example: *colour, fonts, rules, column widths*, etc.
+
+					- Javascript plugin site [unheap.com](http://www.unheap.com/) uses **bold colours**
+					- Design agency [Touch](http://www.thetouchagency.co.uk/) uses **hover transitions**
+				</section>
+
+				<section title="A striking use of multiple kinds of contrast" data-background-image="images/unheap.png" data-background-size="900px"><div>&nbsp;</div></section>					
+				<section title="A stylish minimal use of contrast on hover" data-background-image="images/touch-website.png" data-background-size="900px"><div>&nbsp;</div></section>					
+			</section>
+
+      <section data-markdown class="crammed left-align">
+        ### SIMPLICITY
+
+        **“Simplicity is the ultimate form of sophistication.”** —Leonardo da Vinci
+
+        **“Don’t make me think.”** —Steve Krug
+
+        ### COMMUNICATION
+
+        **“People react positively when things are clear and understandable.”**  
+        —Dieter Rams
+
+        **“The main goal is not to complicate the already difficult life of the consumer.”** —Raymond Loewy
+
+        ### DESIGN
+
+        **“White space is to be regarded as an active element, not a passive background.”** —Jan Tschichold
+
+        **“A lot of what we are doing is getting design out of the way.”** —Jonathan Ive
+
 			</section>
 
 	<script src="lib/js/head.min.js"></script>
