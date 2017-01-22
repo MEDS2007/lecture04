@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>MEDS2007 Website, Lecture 02</title>
+	<title>MEDS2007 Website, Lecture 03</title>
 
 	<meta name="description" content="MEDS2007, Lecture 2">
 	<meta name="author" content="Dave Everitt">
@@ -18,25 +18,21 @@
 	<link rel="stylesheet" href="lib/css/zenburn.css"><!-- syntax highlighting of code -->
 	<link rel="stylesheet" href="css/ctec3905.css"><!-- custom styles -->
 	<style>
-		.ia-diagram {
-			position: relative;
-			box-sizing: border-box;
-      text-align: center;
-			top: .6em;
-			padding: 8px;
-			width: 360px;
-			height: 350px;
-			background: #ccc;
-			color: #666;
-			float: left;
-		}
-		.ia-diagram div {
-			position: absolute;
-			width: 200px;
-			height: 200px;
-			box-sizing: border-box;
-			border-radius: 50%;
-		}
+	.borders > div {
+		background: inherit;
+	}
+	.borders div div {
+		background: white;
+		text-align: center;
+		line-height: 2.5em;
+		font-size: 0.8em;
+		width: 700px;
+		margin-top: 1em;
+	}
+	.reveal .borders .square div {
+		height: 2.5em;
+		width: 2.5em;
+	}
 	</style>
 
 	<!-- Printing and PDF exports -->
@@ -55,7 +51,7 @@
 			<section data-markdown>
 				## MEDS2007: Website
 				
-				# **Lecture 2** 
+				# **Lecture 3** 
 
 				**Dave Everitt**
 				deveritt@dmu.ac.uk
@@ -63,299 +59,302 @@
 
 			<section>
 				<section data-markdown>
-          # **ACCESS**, **INFORMATION** & **DESIGN**
+          # **LAYOUT** & THE **BOX MODEL**
           
-          - Access: **who** can use your site?
-          - Design: **how** does the site appear?
-          - Information: **what** is the content?
+          - **margin:** space *outside*
+          - **padding:** space *inside*
+          - **border:** line *around*
         </section>
       </section>
 
-			<section>
-				<section data-markdown class="left-align">
-					# Accessibility **1**
+			<section class="left-align">
+				<section data-markdown style="text-align: center;">
+					# **HTML** GOES IN **BOXES**
 
-					“Whatever your needs or preferences, there’s almost certainly a way to access the web.
+					Every HTML element is contained in a “box”:
 
-					**Theoretically**.
-
-					In reality, the web is a mess… accessibility options tend to be forgotten or stripped away, …though accessible websites and apps can… still be beautiful, innovative… user-friendly.
-
-					…**This is a human rights issue**. Disabled people *need* these options in order to access the web.”
-
-					Mischa Andrews: [The inaccessible web](https://uxdesign.cc/the-inaccessible-web-how-we-got-into-this-mess-7cd3460b8e32)  
+					![A diagram of the box model](images/boxmodel.png)
 				</section>
 
 				<section data-markdown>
-					> “The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect”
-
-					Tim Berners-Lee (1997)  
-					[Web Accessibility Initiative announcement](https://www.w3.org/Press/IPO-announce)
-				</section>
-
-				<section data-markdown class="left-align">
-					## Facts and information
-
-					- **It’s been built into the web from the start**  
-					W3C (2005) [Introduction to Web Accessibility](https://www.w3.org/WAI/intro/accessibility.php)
-					- The **Disability Equality Act (2010)** is law—you could be [sued for discrimination](http://www.seqlegal.com/blog/website-accessibility-and-equality-act-2010) if your website does not meet certain [accessibility standards](https://www.abilitynet.org.uk/expert-resources/web-accessibility-resources)
-
-					“the **duty to make reasonable adjustments** requires providers to **ensure disabled people can access services**. Service providers should **anticipate the needs** of potential disabled customers…”  
-					—adapted from [Disabled access to websites under UK law](http://www.out-law.com/page-330)
-				</section>
-			</section>
-
-			<section>
-				<section data-markdown class="left-align">
-					# Accessibility **2**
+					# THE **MARGIN**
 					
-					- Needs to be **incorporated from the start** of a project
-					- Good **Information Architecture** and **navigation** help
-					- HTML5 **semantic elements** are crucial e.g.:
+					Makes an invisible **space around** an element  
+					usually set in **pixels**, **ems** or **percentages**:  
+					`1px`, `.5em`, `5%`
 					
-					```html
-&lt;header>, &lt;nav>, &lt;main>, &lt;section>, &lt;figure>, &lt;footer>…
-					```
-				</section>
-
-				<section data-markdown class="left-align">
-					## Resources and research
-
-					- [WebAim](http://webaim.org/intro/)—**see this site first!**
-					- [Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
-					- [Notes on Using ARIA in HTML](https://www.w3.org/TR/aria-in-html/)—see the [1st to 5th](https://www.w3.org/TR/aria-in-html/#first-rule-of-aria-use) rules!
-					- [How to Use ARIA Effectively with HTML5](https://www.sitepoint.com/how-to-use-aria-effectively-with-html5/)
-				</section>
-			</section>
-
-			<section>
-				<section data-markdown class="left-align">
-					# INFORMATION ARCHITECTURE (IA): **1**
-          
-					> If you’ve ever tried to use something and thought, “where am I supposed to go next?” or “this doesn’t make any sense,” you are encountering an issue with an information architecture.  
-					—[What is Information Architecture?](http://www.iainstitute.org/what-is-ia)
-				</section>
-
-				<section data-markdown class="left-align">
-					## What is **IA**?
+					Can be zero: `0`
 					
-					- The **art and science** of structuring and classifying websites/intranets/apps to help people find and manage information
-					- A **discipline** and community of practice bringing principles of design and architecture to online development
-
-					Entire university courses cover Information Architecture—[search for "library science and information architecture"](https://www.google.co.uk/search?q=librry+science+and+information+archtectre&oq=librry+science+and+information+archtectre&aqs=chrome..69i57.7711j0j7&sourceid=chrome&ie=UTF-8#q=library+science+and+information+architecture)
+					These elements have **default margins** (see lecture demo):  
+					`body h1..h6 p ul ol dl dd dir blockquote fieldset form`
 				</section>
 
-				<section class="left-align">
-					<h2>How did <strong>IA</strong> begin?</h2>
-
-					<img style="float:left;" src="images/ia/information-architecture-book.jpg" alt="Information Architecture book cover">
-
-					<p style="width: 58%; float: right; margin-top: .2em;">In 1998 Peter Morville and co-author Louis Rosenfeld wrote <a href="https://wordery.com/information-architecture-louis-rosenfeld-9781491911686?currency=GBP" title="Cheapest copy of 'Information Architecture' we could find">Information Architecture for the World Wide Web</a>
-					<br>
-					(4th edition 2015)
-					<br>
-					<br>
-					Known as <em>The Polar Bear Book</em> it is considered to be <strong>the</strong> essential text on the subject.</p>
-				</section>
-
-				<section data-markdown class="left-align">
-					## Origins: **library science**
+				<section data-markdown>
+					# THE **PADDING**
 					
-					- The development of “**knowledge-organization** systems”
-					- Study of how to **categorize**, **catalogue**, **locate** resources
-				</section>
+					Is **inside** the box, **around** the box **content**
 
-				<section data-markdown class="left-align">
-					## Origins: **Cognitive Psychology**
+					**background colour**/**background image** extend into padding
+
+					usually set in **pixels**, **ems** or **percentages**:  
+					`1px`, `.5em`, `5%`
 					
-					- **Cognitive load**: how much information we can process at any time—avoiding information overload.
-					- **Mental models**: the assumptions users have—information is easier to discover in familiar places.
-					- **Decision making**: the cognitive process of making a choice or selecting an option—IA helps make decisions by providing contextual information at key points.
-
-					[Complete Beginners Guide to Information Architecture](http://www.uxbooth.com/articles/complete-beginners-guide-to-information-architecture/)
-				</section>
-			</section>
-
-			<section>
-				<section class="left-align">
-					<h1>IA: <strong>2</strong></h1>
-          
-					<div class="ia-diagram">
-						<div style="left: 76px; top: 8px; background: rgba(256,100,100,0.5); line-height: 170px;">Users</div>
-						<div style="bottom: 8px; left: 8px; background: rgba(100,256,100,0.5); line-height: 240px; transform: rotate(32deg);">Content</div>
-						<div style="bottom: 8px; right: 8px; background: rgba(100,100,256,0.5); line-height: 240px; transform: rotate(-32deg);">Context</div>
-						<strong style="position: absolute; text-align: center; left: 43%; top: 44%; font-size: 1.5em; color: #444; text-shadow: 0 0 4px #fff">IA</strong>
-					</div>
-
-					<ul style="width: 56%; margin-left: 10px; margin-top: -0.28em; float: right;">
-						<li><strong>Users</strong>: who they are, what are their information-seeking behaviours and needs</li>
-						<li><strong>Content</strong>: volume, format, metadata, structure, labels (e.g. menus)</li>
-						<li><strong>Context</strong>: business model, aim of website, cultural background, constraints</li>
-					</ul>
+					Can be zero: `0`
 				</section>
 
-				<section title="Classic Information Architecture infographic by Louis Rosenfeld" data-background-image="images/ia/rosenfeld-users-content-context.png" data-background-size="800px"><div>&nbsp;</div></section>					
-				<section title="The Elements of User Experience by Jesse James Garrett Rosenfeld" data-background-image="images/ia/elements-of-ui-garrett.png" data-background-size="800px"><div>&nbsp;</div></section>					
-			</section>
-
-			<section data-markdown class="left-align">
-				# IA: **3**
-
-				## the information backbone of a website
-				
-				- **Content inventory/audit**  
-					locate and identify and check site content
-				- **Information grouping**  
-					connect content with user-centered relationships
-				- **Taxonomy development**  
-					a controlled/consistent vocabulary throughout  
-
-				Jennifer Cardello: [The Difference Between IA and Navigation](https://www.nngroup.com/articles/ia-vs-navigation/)  
-			</section>
-
-			<section>
-				<section data-markdown class="left-align">
-					# IA: **4**
+				<section data-markdown>
+					# THE **BORDER**
 					
-					## What is Architecture?
+					Goes **around the outside** of the box
 
-					From Cal Henderson, [Building Scalable Web Sites](http://shop.oreilly.com/product/9780596102357.do) (2006)
-
-					**if buildings were like software**, the architect would be involved in the actual building process, from laying the foundations right through to installing the fixtures. …starting with a couple of rooms and some basic amenities, some people would… start living there before the building was complete. When it looked like the building work was about to finish …more people would turn up and start living there, too.
-				</section>
-
-				<section data-markdown class="left-align">
-					## Building around users
-
-					…new residents would need **new features**—more bedrooms… a swimming pool, a basement… The architect would design these… features, augmenting the original design. But when it came to building them, the **current residents wouldn't leave**. They'd continue living in the house even while it was extended, all the time complaining about the noise and dust from the building work.
-
-					In fact… **more people would move in** while the extensions were being built. By the time the modifications were complete, more would be needed to house the newcomers and keep them happy.
-				</section>
-
-				<section data-markdown class="left-align">
-					## Plan from the start
+					usually set in **pixels**, sometimes **ems** or **percentages**:  
+					`1px`, `.5em`, `5%`
 					
-					The key… is **planning for these issues from the beginning**. If the architect … started out by building a huge, complex house, it would be **overkill**. By the time it was ready, the residents would have gone elsewhere to live in a smaller house built in a fraction of the time.
-
-					If we build in such a way that extending our house takes too long then our **residents might move elsewhere**, We need to know how to start at the right scale and allow our house to be **extended as painlessly as possible**.
-				</section>
-
-				<section data-markdown class="left-align">
-					## Minimize effort
-
-					That's not to say that we're going to get anything right the first time. In the [scaling](https://www.nngroup.com/articles/scaling-user-interfaces/ "Scaling User Interfaces: An Information-Processing Approach to Multi-Device Design") of a typical application, every aspect and feature is probably going to be revisited and [refactored](http://www.refactoring.com/ "a change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior").
-
-					That's fine—the task of an application architect is to **minimize the time it takes to [refactor](https://sourcemaking.com/refactoring "A big site about refactoring") each component**, through careful initial and ongoing design.
+					Can be zero: `none`
 				</section>
 			</section>
 
 			<section class="left-align">
 				<section data-markdown>
-					# 4 BASIC **DESIGN** PRINCIPLES
+					# BOX-MODEL **SYNTAX**: 1
 					
-					- **P**roximity
-					- **A**lignment
-					- **R**epetition
-					- **C**ontrast
+					## For both **margin** and **padding**
 
-					(Mnemonic: the **reverse of CRAP** :-)
+					```css
+					header {
+						margin: 2px; /* a 2-pixel margin all round */
+						padding-top: 1em; /* one line of padding at top */
+						margin-left: 5%; /* 5% of available space to left */
+					}
+					/* you can use: -top -right -bottom -left */
+					```
 				</section>
 
 				<section data-markdown>
-					# **P**roximity
-					**Proximity** sets up *visual cues* that group similar items, suggesting how to ‘read’ content.
+					# BOX-MODEL **SYNTAX**: 2
+					
+					**CSS shorthand**
+					- **4** values: **top, right, bottom, left** (clockface)
+					- **3** values: **top, left-right, bottom**
+					- **2** values: **top-bottom, left-right**
 
-					- Group **related items** with each other
-					- Use **common styles** to connect grouped items
-					- Sort **complex content** into groups for legibility
-
-					The [BBC iPlayer website](http://www.bbc.co.uk/iplayer) uses proximity and containment to group related items
-
-					The Guardian website groups ‘most popular’ news stories
+					```css
+					header {
+						/* 4: top right bottom left: */
+						padding: 1em 10px .5em 5px;
+						/* 3: one line top+bottom, none left-right: */
+						margin: 1em 0;
+						/* 2: one line top, 10 pixels l-r, 1/2 line bottom */
+						padding: 1em 10px .5em;
+					}
+					```
 				</section>
-
-				<section title="a screenshot of the BBC iPlayer website" data-background-image="images/bbc-iplayer.png" data-background-size="900px"><div>&nbsp;</div></section>					
-				<section title="a screenshot of the Guardian website" data-background-image="images/guardian.png" data-background-size="900px"><div>&nbsp;</div></section>
 
 				<section data-markdown>
-					# **A**lignment
-
-					- Nothing should be placed on the page arbitrarily
-					- Every item is connected visually with other page elements
-
-					Alignment enables page elements to be seen as **part of the whole**, creating a **holistic feel** to all the various pieces of information.
-
-					A strict use of alignment on the [Oslo-based design agency Heydays](http://heydays.no/) gives a pleasing sense of coherence and simplicity.
+					# BOX-MODEL **SYNTAX**: 3
+					
+					Set top, right, bottom, left, then **reset one**
+					
+					```css
+					header {
+						margin: 10px; /* 10 pixels all round… */
+						margin-top: 0; /* …but no top margin */
+					}
+					```
+					The second line comes *after*—so **overrides**—the first
 				</section>
 
-				<section title="An obvious example of a grid-based website" data-background-image="images/heydays.jpg" data-background-size="800px"><div>&nbsp;</div></section>					
+				<section data-markdown>
+					# BOX-MODEL **SYNTAX**: 4
+					
+					To **centre** an block element by itself, set the  
+					**left** and **right** margins to `auto`:
+					
+					```css
+					header {
+						margin: 0 auto; /* none top-bottom, l-r auto */
+					}
+					```
+					`auto` fills the available space.
+
+					This is a common way to **centre a page design** in the **browser window**, although current designs prefer to **fill the browser window** completely.
+				</section>
+
+				<section data-markdown>
+					# BOX-MODEL **SYNTAX**: 5
+
+					By default, **padding and border are added** to the width and height of a box:
+
+					```css
+					main {
+						width: 70%;
+						box-sizing: border-box;
+						padding: 1em;
+						border: 2px;
+					}
+					/* width is 70% + 2em + 4px */
+					```
+				</section>
+
+				<section data-markdown>
+					# BOX-MODEL **SYNTAX**: 6
+
+					To make measurements easier, set `box-sixing` to `border-box` to **include padding and border** in the width and height:
+
+					```css
+					main {
+						width: 70%;
+						box-sizing: border-box;
+						padding: 1em;
+						border: 2px;
+					}
+					/* width is still 70% */
+					```
+				</section>
+
+				<section data-markdown>
+					# BOX-MODEL **SYNTAX**: 7
+
+					- Learn about the box model with [exercises on W3Schools](http://www.w3schools.com/css/css_boxmodel.asp)
+					- Adjust sliders on an [Interactive box-model demo](http://guyroutledge.github.io/box-model/)
+				</section>
+			</section>
+
+			<section class="left-align">
+				<section data-markdown>
+					# BOX-MODEL **BORDER**: 1
+					
+					Draws a line around a box, has three parameters:
+
+					```css
+					img {
+						border-color: white;
+						border-style: solid; /* dotted, dashed, (more)... */
+						border-width: 2px;
+					}
+					```
+				</section>
+
+				<section data-markdown>
+					# BOX-MODEL **BORDER**: 2
+					
+					Each property can have **one**, **two**, **three** or the **four** “clockface” values: **top**, **right**, **bottom**, **left**.
+					
+					```css
+					header {
+						border-color: white black; /* top, bottom */
+						border-width: 2px 0 4px; /* top, r-l, bottom */
+						border-style: none solid dotted dashed;
+					}
+					```
+				</section>
+
+				<section data-markdown>
+					# BOX-MODEL **BORDER**: 3
+					
+					**CSS shorthand** for a single border style all around:
+
+					```css
+					img {
+						border: 1px #555 dotted;
+						/* a grey dotted border */
+					}
+					```
+				</section>
+
+				<section data-markdown>
+					# BOX-MODEL **BORDER**: 4
+					
+					boxes don't have to look boxy.  
+					They can be a bit rounded…
+
+					```css
+					img {
+						border-radius: 10px;
+					}
+					```
+				</section>
+
+				<section data-markdown>
+					# BOX-MODEL **BORDER**: 5
+					
+					Or have one, two or three sides rounded…
+
+					```css
+					img {
+						border-top-left-radius: 50%;
+						border-bottom-left-radius: 50%;
+						/* a semi-circle (if height=width) or half-ellipse */
+					}
+					img {
+						border-top-right-radius: 100%;
+						/* an arc (if height=width) */
+					}
+					```
+				</section>
+
+				<section data-markdown>
+					# BOX-MODEL **BORDER**: 5
+					
+					Or completely round…
+
+					```css
+					img {
+						border-radius: 50%;
+					}
+					```
+				</section>
+
+				<section class="borders" style="width: 100%; text-align: center;">
+					<h1>BOX-MODEL <strong>BORDER</strong>: 5</h1>
+					<p><strong>border-radius</strong>, rectangles/squares, <strong>no border-style/color</strong></p>
+					<div style="float: left;">
+						<div style="background: #fcc; text-align: right; padding-right: 1em; border-radius: 10px;">i’m 10px rounded, that square’s 50% rounded -></div>
+						<div style="background: #cfc; text-align: right; padding-right: 1em; border-top-left-radius: 100%;">one corner 100% rounded</div>
+						<div style="background: #ccf; text-align: right; padding-right: 1em; border-top-left-radius: 50%; border-bottom-left-radius: 50%;">two corners 50% rounded</div>
+					</div>
+					<div class="square" style="float: right;">
+						<div style="background: #fcc; border-radius: 50%;"></div>
+						<div style="background: #cfc; border-top-left-radius: 100%;"></div>
+						<div style="background: #ccf; border-top-left-radius: 50%; border-bottom-left-radius: 50%;"></div>
+					</div>
+				</section>
+
+				<section class="borders" style="width: 100%; text-align: center;">
+					<h1>BOX-MODEL <strong>BORDER</strong>: 5</h1>
+					<p><strong>border-radius</strong>, rectangles/squares,<br>with <strong>border-style</strong> 4px, <strong>border-color</strong> white</p>
+					<div style="float: left;">
+						<div style="background: #fcc; text-align: right; border-width: 4px; border-style: solid; border-color: white; padding-right: 1em; border-radius: 10px;">i’m 10px rounded, that square’s 50% rounded -></div>
+						<div style="background: #cfc; text-align: right; border-width: 4px; border-style: solid; border-color: white; padding-right: 1em; border-top-left-radius: 100%;">one corner 100% rounded</div>
+						<div style="background: #ccf; text-align: right; border-width: 4px; border-style: solid; border-color: white; padding-right: 1em; border-top-left-radius: 50%; border-bottom-left-radius: 50%;">two corners 50% rounded</div>
+					</div>
+					<div class="square" style="float: right;">
+						<div style="background: #fcc; border-width: 4px; border-style: solid; border-color: white; border-radius: 50%;"></div>
+						<div style="background: #cfc; border-width: 4px; border-style: solid; border-color: white; border-top-left-radius: 100%;"></div>
+						<div style="background: #ccf; border-width: 4px; border-style: solid; border-color: white; border-top-left-radius: 50%; border-bottom-left-radius: 50%;"></div>
+					</div>
+				</section>
 
 				<section data-markdown class="left-align">
-					# **A**lignment: grids
+					# BOX-MODEL **BORDER**: 6
+					
+					## more information on borders
+					
+					Reference: [CSS Borders (W3C website)](http://www.w3schools.com/css/css_border.asp)
 
-					Grids are the **primary method** for achieving **alignment**.
-
-					- **The core text** on the history and use of grids in design is: Khoi Vinh and Mark Boulton (2007) [Grids Are Good](http://www.slideshare.net/huer1278ft/grids-are-good-right)
-					- Also see Vitaly Friedman (2007) [Designing With Grid-Based Approach](https://www.smashingmagazine.com/2007/04/designing-with-grid-based-approach/), Smashing Magazine
+					Or go crazy with [CSS shapes](https://css-tricks.com/examples/ShapesOfCSS/)
 				</section>
-
-				<section title="An example image of a column-based grid" data-background-image="images/grids/grid-01.jpg" data-background-size="800px"><div>&nbsp;</div></section>					
-				<section title="a vertical typography-based grid" data-background-image="images/grids/grid-02.jpg" data-background-size="800px"><div>&nbsp;</div></section>					
-
-				<section data-markdown>
-          # **R**epetition
-          
-          - Repeat **design themes** throughout the interface
-          - Repetition provides **consistency** across design elements
-          - Consistent sizing and proportions strengthen **style**
-          
-          Use:
-          
-          - site-wide **templates** and **visual elements** for consistency
-          - **style rules** for content e.g. common image sizes (at least widths), colour palette
-          - no more than **two font families**: one for headings, the other for body text
-				</section>
-
-				<section title="An example of repetition in heading style" data-background-image="images/karl-anders.png" data-background-size="600px"><div>&nbsp;</div></section>
-				<section title="Repetition used to display columns of images and titles" data-background-image="images/creative-depart.jpg" data-background-size="700px"><div>&nbsp;</div></section>
-
-				<section data-markdown>
-					# **C**ontrast
-
-					- Make **distinctly different** items *look* different
-					- Contrast makes content appear **visually inviting**
-
-					There are many ways to create contrast. For example: *colour, fonts, rules, column widths*, etc.
-
-					- Javascript plugin site [unheap.com](http://www.unheap.com/) uses **bold colours**
-					- Design agency [Touch](http://www.thetouchagency.co.uk/) uses **hover transitions**
-				</section>
-
-				<section title="A striking use of multiple kinds of contrast" data-background-image="images/unheap.png" data-background-size="900px"><div>&nbsp;</div></section>					
-				<section title="A stylish minimal use of contrast on hover" data-background-image="images/touch-website.png" data-background-size="900px"><div>&nbsp;</div></section>					
 			</section>
 
-      <section data-markdown class="crammed left-align">
-        ### SIMPLICITY
+			<section class="left-align">
+				<section data-markdown>
+					# BOX-MODEL **DEMO**
 
-        **“Simplicity is the ultimate form of sophistication.”** —Leonardo da Vinci
-
-        **“Don’t make me think.”** —Steve Krug
-
-        ### COMMUNICATION
-
-        **“People react positively when things are clear and understandable.”**  
-        —Dieter Rams
-
-        **“The main goal is not to complicate the already difficult life of the consumer.”** —Raymond Loewy
-
-        ### DESIGN
-
-        **“White space is to be regarded as an active element, not a passive background.”** —Jan Tschichold
-
-        **“A lot of what we are doing is getting design out of the way.”** —Jonathan Ive
-
+					A simple page to [demonstrate margins and padding](../box-model-basics/index.html)
+				</section>
 			</section>
+		</div>
+	<div>
 
 	<script src="lib/js/head.min.js"></script>
 	<script src="js/reveal.js"></script>
