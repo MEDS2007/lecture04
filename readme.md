@@ -1,9 +1,9 @@
 # MEDS2007
 
-## Lecture 3
+## Lecture 4
 
-**23 January 2017**
+**30 January 2017**
 
-This is the presentation for the third lecture on **the HTML box model**.
+This is the presentation for the fourth lecture, on **CSS animations** and **introducing JavaScript**.
 
-You can [view this presentation online](https://meds2007.github.io/lecture03/) on GitHub pages.
+You can [view this presentation online](https://meds2007.github.io/lecture04/) on GitHub pages.

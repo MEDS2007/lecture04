@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>MEDS2007 Website, Lecture 03</title>
+	<title>MEDS2007 Website, Lecture 04</title>
 
 	<meta name="description" content="MEDS2007, Lecture 3">
 	<meta name="author" content="Dave Everitt">
@@ -17,23 +17,6 @@
 	<link rel="stylesheet" href="css/theme/moon.css"><!-- beige -->
 	<link rel="stylesheet" href="lib/css/zenburn.css"><!-- syntax highlighting of code -->
 	<link rel="stylesheet" href="css/ctec3905.css"><!-- custom styles -->
-	<style>
-	.borders > div {
-		background: inherit;
-	}
-	.borders div div {
-		background: white;
-		text-align: center;
-		line-height: 2.5em;
-		font-size: 0.8em;
-		width: 700px;
-		margin-top: 1em;
-	}
-	.reveal .borders .square div {
-		height: 2.5em;
-		width: 2.5em;
-	}
-	</style>
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -51,7 +34,7 @@
 			<section data-markdown>
 				## MEDS2007: Website
 				
-				# **Lecture 3** 
+				# **Lecture 4** 
 
 				**Dave Everitt**
 				deveritt@dmu.ac.uk
@@ -59,313 +42,67 @@
 
 			<section>
 				<section data-markdown>
-          # HTML & CSS: **BOX MODEL**
+          # SUBJECT**
           
-          - **margin:** space *outside*
-          - **padding:** space *inside*
-          - **border:** line *around*
+          - **point:** description
+          - **point:** description
+          - **point:** description
         </section>
       </section>
 
 			<section class="left-align">
-				<section data-markdown style="text-align: center;">
-					# **HTML** GOES IN **BOXES**
+				<section data-markdown>
+					# HEADING
 
-					Every HTML element is contained in a “box”:
-
-					![A diagram of the box model](images/boxmodel.png)
+					text
 				</section>
 
 				<section data-markdown>
-					# THE **MARGIN**
-					
-					Makes an invisible **space around** an element  
-					usually set in **pixels**, **ems** or **percentages**:  
-					`1px`, `.5em`, `5%`
-					
-					Can be zero: `0`
-					
-					These elements have **default margins** (see lecture demo):  
-					`body h1..h6 p ul ol dl dd dir blockquote fieldset form`
-				</section>
+					# HEADING
 
-				<section data-markdown>
-					# THE **PADDING**
-					
-					Is **inside** the box, **around** the box **content**
-
-					**background colour**/**background image** extend into padding
-
-					usually set in **pixels**, **ems** or **percentages**:  
-					`1px`, `.5em`, `5%`
-					
-					Can be zero: `0`
-				</section>
-
-				<section data-markdown>
-					# THE **BORDER**
-					
-					Goes **around the outside** of the box
-
-					usually set in **pixels**, sometimes **ems** or **percentages**:  
-					`1px`, `.5em`, `5%`
-					
-					Can be zero: `none`
+					text
 				</section>
 			</section>
 
 			<section class="left-align">
 				<section data-markdown>
-					# BOX-MODEL **SYNTAX**: 1
-					
-					## For both **margin** and **padding**
+					# HEADING
 
-					```css
-					header {
-						margin: 2px; /* a 2-pixel margin all round */
-						padding-top: 1em; /* one line of padding at top */
-						margin-left: 5%; /* 5% of available space to left */
-					}
-					/* you can use: -top -right -bottom -left */
-					```
+					text
 				</section>
 
 				<section data-markdown>
-					# BOX-MODEL **SYNTAX**: 2
-					
-					**CSS shorthand**
-					- **4** values: **top, right, bottom, left** (clockface)
-					- **3** values: **top, left-right, bottom**
-					- **2** values: **top-bottom, left-right**
+					# HEADING
 
-					```css
-					header {
-						/* 4: top right bottom left: */
-						padding: 1em 10px .5em 5px;
-						/* 3: one line top, 10 pixels l-r, 1/2 line bottom */
-						padding: 1em 10px .5em;
-						/* 2: one line top+bottom, none left-right: */
-						margin: 1em 0;
-					}
-					```
-				</section>
-
-				<section data-markdown>
-					# BOX-MODEL **SYNTAX**: 3
-					
-					Set top, right, bottom, left, then **reset one**
-					
-					```css
-					header {
-						margin: 10px; /* 10 pixels all round… */
-						margin-top: 0; /* …but no top margin */
-					}
-					```
-					The second line comes *after*—so **overrides**—the first
-				</section>
-
-				<section data-markdown>
-					# BOX-MODEL **SYNTAX**: 4
-					
-					To **centre** an block element by itself, set the  
-					**left** and **right** margins to `auto`:
-					
-					```css
-					header {
-						margin: 0 auto; /* none top-bottom, l-r auto */
-					}
-					```
-					`auto` fills the available space.
-
-					This is a common way to **centre a page design** in the **browser window**, although current designs prefer to **fill the browser window** completely.
-				</section>
-
-				<section data-markdown>
-					# BOX-MODEL **SYNTAX**: 5
-
-					By default, **padding and border are added** to the width and height of a box:
-
-					```css
-					main {
-						width: 70%;
-						box-sizing: border-box;
-						padding: 1em;
-						border: 2px;
-					}
-					/* width is 70% + 2em + 4px */
-					```
-				</section>
-
-				<section data-markdown>
-					# BOX-MODEL **SYNTAX**: 6
-
-					To make measurements easier, set `box-sixing` to `border-box` to **include padding and border** in the width and height:
-
-					```css
-					main {
-						width: 70%;
-						box-sizing: border-box;
-						padding: 1em;
-						border: 2px;
-					}
-					/* width is still 70% */
-					```
-				</section>
-
-				<section data-markdown>
-					# BOX-MODEL **SYNTAX**: 7
-
-					`display: inline-block` turns **inline elements** into **blocks that line up horizontally**, often for `a` or `li` tags in menus or the `img` tag for images.
-
-					```css
-					a {
-						display: inline-block;
-					}
-					/* 'block' will turn inline elements to blocks */
-					```
-					[W3Schools: HTML Block and Inline Elements](http://www.w3schools.com/html/html_blocks.asp)
-				</section>
-
-				<section data-markdown>
-					# BOX-MODEL **SYNTAX**: 8
-
-					- Learn about the box model with [exercises on W3Schools](http://www.w3schools.com/css/css_boxmodel.asp)
-					- Adjust sliders on an [Interactive box-model demo](http://guyroutledge.github.io/box-model/)
+					text
 				</section>
 			</section>
 
 			<section class="left-align">
 				<section data-markdown>
-					# BOX-MODEL **BORDER**: 1
-					
-					Draws a line around a box, has three parameters:
+					# HEADING
 
-					```css
-					img {
-						border-color: white;
-						border-style: solid; /* dotted, dashed, (more)... */
-						border-width: 2px;
-					}
-					```
+					text
 				</section>
 
 				<section data-markdown>
-					# BOX-MODEL **BORDER**: 2
-					
-					Each property can have **one**, **two**, **three** or the **four** “clockface” values: **top**, **right**, **bottom**, **left**.
-					
-					```css
-					header {
-						border-color: white black; /* top, bottom */
-						border-width: 2px 0 4px; /* top, r-l, bottom */
-						border-style: none solid dotted dashed;
-					}
-					```
-				</section>
+					# HEADING
 
-				<section data-markdown>
-					# BOX-MODEL **BORDER**: 3
-					
-					**CSS shorthand** for a single border style all around:
-
-					```css
-					img {
-						border: 1px #555 dotted;
-						/* a grey dotted border */
-					}
-					```
-				</section>
-
-				<section data-markdown>
-					# BOX-MODEL **BORDER**: 4
-					
-					boxes don't have to look boxy.  
-					They can be a bit rounded…
-
-					```css
-					img {
-						border-radius: 10px;
-					}
-					```
-				</section>
-
-				<section data-markdown>
-					# BOX-MODEL **BORDER**: 5
-					
-					Or have one, two or three sides rounded…
-
-					```css
-					img {
-						border-top-left-radius: 50%;
-						border-bottom-left-radius: 50%;
-						/* a semi-circle (if height=width) or half-ellipse */
-					}
-					img {
-						border-top-right-radius: 100%;
-						/* an arc (if height=width) */
-					}
-					```
-				</section>
-
-				<section data-markdown>
-					# BOX-MODEL **BORDER**: 6
-					
-					Or completely round…
-
-					```css
-					img {
-						border-radius: 50%;
-					}
-					```
-				</section>
-
-				<section class="borders" style="width: 100%; text-align: center;">
-					<h1>BOX-MODEL <strong>BORDER</strong>: 7</h1>
-					<p><strong>border-radius</strong>, rectangles/squares, <strong>no border-style/color</strong></p>
-					<div style="float: left;">
-						<div style="background: #fcc; text-align: right; padding-right: 1em; border-radius: 10px;">i’m 10px rounded, that square’s 50% rounded -></div>
-						<div style="background: #cfc; text-align: right; padding-right: 1em; border-top-left-radius: 100%;">one corner 100% rounded</div>
-						<div style="background: #ccf; text-align: right; padding-right: 1em; border-top-left-radius: 50%; border-bottom-left-radius: 50%;">two corners 50% rounded</div>
-					</div>
-					<div class="square" style="float: right;">
-						<div style="background: #fcc; border-radius: 50%;"></div>
-						<div style="background: #cfc; border-top-left-radius: 100%;"></div>
-						<div style="background: #ccf; border-top-left-radius: 50%; border-bottom-left-radius: 50%;"></div>
-					</div>
-				</section>
-
-				<section class="borders" style="width: 100%; text-align: center;">
-					<h1>BOX-MODEL <strong>BORDER</strong>: 8</h1>
-					<p><strong>border-radius</strong>, rectangles/squares, with<br><code>border-width: 4px; border-color: #666;</code></p>
-					<div style="float: left;">
-						<div style="background: #fcc; text-align: right; border-width: 4px; border-style: solid; border-color: #666; padding-right: 1em; border-radius: 10px;">i’m 10px rounded, that square’s 50% rounded -></div>
-						<div style="background: #cfc; text-align: right; border-width: 4px; border-style: solid; border-color: #666; padding-right: 1em; border-top-left-radius: 100%;">one corner 100% rounded</div>
-						<div style="background: #ccf; text-align: right; border-width: 4px; border-style: solid; border-color: #666; padding-right: 1em; border-top-left-radius: 50%; border-bottom-left-radius: 50%;">two corners 50% rounded</div>
-					</div>
-					<div class="square" style="float: right;">
-						<div style="background: #fcc; border-width: 4px; border-style: solid; border-color: #666; border-radius: 50%;"></div>
-						<div style="background: #cfc; border-width: 4px; border-style: solid; border-color: #666; border-top-left-radius: 100%;"></div>
-						<div style="background: #ccf; border-width: 4px; border-style: solid; border-color: #666; border-top-left-radius: 50%; border-bottom-left-radius: 50%;"></div>
-					</div>
-				</section>
-
-				<section data-markdown class="left-align">
-					# BOX-MODEL **BORDER**: 9
-					
-					## more information on borders
-					
-					Reference: [W3Schools: CSS Borders](http://www.w3schools.com/css/css_border.asp)
-
-					Or go crazy with [CSS shapes](https://css-tricks.com/examples/ShapesOfCSS/)
+					text
 				</section>
 			</section>
 
 			<section class="left-align">
 				<section data-markdown>
-					# BOX-MODEL **DEMOS**
+					# HEADING
 
-					- The simple [margins and padding demo shown in the lecture](https://github.com/MEDS2007/box-model-basics)
-					- Code for the more [complex demo from the lecture](https://github.com/CTEC3905/boxmodel)
+					text
+				</section>
+
+				<section data-markdown>
+					# HEADING
+
+					text
 				</section>
 			</section>
 		</div>
