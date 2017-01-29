@@ -40,33 +40,193 @@
 				deveritt@dmu.ac.uk
 			</section>
 
-			<section>
+			<section class="left-align">
 				<section data-markdown>
           # **THE TOPICS**
           
-          - [**CSS animations**]()
-					- [**introducing JavaScript**]()
-					- [**Web Typography**]()
+          - [CSS **animations**](#/2)
+          - [Web **Typography exercise**](#/3)
+          - [introducing **JavaScript**](#/4)
         </section>
       </section>
 
 			<section class="left-align">
 				<section data-markdown>
-					# CSS **ANIMATIONS**: **01**
+					# CSS ANIMATION: **1**
 
-					text
+					## COMPONENTS
+
+					- [**transitions**](#/2/3) (things to change, over *time*)
+					- [**transformations**](#/2/4) (shape-shifting, *no* timing)
+					- [**animation**](#/2/6) (composed *timeline* keyframes)
+
+					You can use these separately or together.
+				</section>
+
+				<section data-markdown class="crammed">
+					# CSS ANIMATION: **2**
+
+					## **TRANSITION:** EXAMPLE 1
+
+					- the transition goes in the **element style**
+					- the things to change in the **:hover style**
+
+					```css
+					div {
+							width: 100px;
+							background: red;
+							transition: all 2s;
+					}
+					div:hover {
+							width: 400px;
+							background: blue;
+					}
+					```
+
+					[W3Schools: CSS3 transition Property](http://www.w3schools.com/cssref/css3_pr_transition.asp)
+				</section>
+
+				<section data-markdown class="crammed">
+					# CSS ANIMATION: **3**
+
+					## **TRANSITION:** EXAMPLE 2
+
+					The **trigger** can be **something other** than :hover:
+
+					```css
+					input[type=text] {
+						width: 100px;
+						transition: all .35s ease-in-out;
+					}
+					input[type=text]:focus {
+						width: 250px;
+						border: 2px solid #0f0;
+					}
+					```
+
+					[Early article on `transition`, Dan Cederholm, 2010](http://alistapart.com/article/understanding-css3-transitions)
+				</section>
+
+				<section data-markdown class="crammed">
+					# CSS ANIMATION: **4**
+
+					## **TRANSITION**
+
+					Changes CSS properties over a **given time** e.g.
+
+					```css
+					transition: all 1s;
+					transition: color 4s 1s;
+					transition: width 4s ease-in-out 1s;
+					```
+
+					- **property**: the CSS to transition (comma-separated, all)  
+					- **duration**: transition length (secs/m'secs `s`|`ms`, `infinite`)  
+					- **timing-function**: (optional) ‘speed curve’ of the transition  
+					- **delay**: (optional) time before transition starts
+
+					[timing-function easing examples and demo](http://easings.net/) 
+				</section>
+
+				<section data-markdown class="crammed">
+					# CSS ANIMATION: **5**
+					
+					## **TRANSFORM**
+					
+					```css
+					transform: rotate(70deg);
+					```
+					
+					Can be used alone (not animated) or with `transition` on an element, then `transform` on :hover/another action.
+
+					The **values** of the `transform` property are:
+										
+					`translate(540px,-200px);` x, y  
+					`rotate(360deg);`  
+					`scale(2, 0.5);` x, y  
+					 `skew(10deg);` x axis  
+					`matrix(1, -0.3, 0, 1, 0, 0)`  
+					scaleX, skewY, skewX, scaleY, translateX, translateY
+				</section>
+
+				<section data-markdown class="crammed">
+					# CSS ANIMATION: **6**
+					
+					## **TRANSFORM** REFERENCES, TUTORIALS
+					
+					- [W3Schools reference: CSS3 transform Property](http://www.w3schools.com/cssref/css3_pr_transform.asp)
+					- [W3Schools tutorial: CSS3 2D Transforms](http://www.w3schools.com/css/css3_2dtransforms.asp)
+					- [W3Schools: CSS3 3D Transforms](http://www.w3schools.com/css/css3_3dtransforms.asp)
 				</section>
 
 				<section data-markdown>
-					# CSS **ANIMATIONS**: **02**
+					# CSS ANIMATION: **7**
 
-					text
+					## **ANIMATION**
+
+					The [CSS `animation` property](http://www.w3schools.com/cssref/css3_pr_animation.asp) binds a custom `animation` to an element identified by it’s `selector` e.g.
+
+					```css
+					.see-this {
+					  animation: change-stuff 5s infinite;
+					}
+					```
+
+					(animation name, duration, how many times to run)  
+					`infinite` runs forever, seconds/milliseconds limit time
+
+					The changes are user-defined in a separate  
+					`@keyframes` code block
 				</section>
 
 				<section data-markdown>
-					# CSS **ANIMATIONS**: **03**
+					# CSS ANIMATION: **8**
+					
+					## **ANIMATION** KEYFRAMES
 
-					text
+					```css
+					@keyframes change-stuff {
+						25% {
+							styles for 1/4 way through;
+						}
+						50% {
+							styles for 1/2 way through;
+						}
+						75% {
+							styles for 3/4 way through;
+						}
+					}
+					```
+
+					You can [download this demo animation](https://ctec3905.github.io/css-animation-01/)  
+					(See [W3Schools CSS3 Animations](http://www.w3schools.com/css/css3_animations.asp)
+				</section>
+
+				<section data-markdown>
+					# CSS ANIMATION: **9**
+
+					## **ANIMATION** WHAT IS (NOT) ANIMATABLE?
+
+					**not** `display: none|block`
+
+					[Animatable CSS properties (W3Schools)](http://www.w3schools.com/CSSref/css_animatable.asp)  
+					
+					triggered by focus/hover/etc.… that can be styled e.g.:  
+					`:focus :blur :hover :active input[type=checkbox]:checked …`
+				</section>
+
+				<section data-markdown>
+					# CSS ANIMATION: **10**
+					
+					## SOME EXAMPLES
+
+					- A [usable CSS-only slideshow](https://github.com/DaveEveritt/pure-css-image-slideshow)
+					- Example: [animated movie posters](http://demo.marcofolio.net/3d_animation_css3/)
+					- [Original Hover Effects](http://tympanus.net/Tutorials/OriginalHoverEffects/)
+					- [Chessboard vacuum (Ana Tudor)](http://codepen.io/thebabydino/pen/FpAun?editors=0100)
+					- [Bending effect - page flip (Fabrizio Bianchi)](http://codepen.io/fbrz/pen/whxbF)
+					- [CSS solar system (Codecademy)](https://www.codecademy.com/courses/web-beginner-en-ymqg0/0/1)
+					- [Rotating colour box (CodePen)](http://codepen.io/yoksel/pen/nxgrp)
 				</section>
 			</section>
 
@@ -74,48 +234,178 @@
 				<section data-markdown>
 					# WEB **TYPOGRAPHY**: **01**
 
-					text
-				</section>
+					## INTRODUCTION TO TUTORIAL
 
-				<section data-markdown>
-					# WEB **TYPOGRAPHY**: **02**
-
-					text
-				</section>
-
-				<section data-markdown>
-					# WEB **TYPOGRAPHY**: **03**
-
-					text
+					- You can [download the typography tutorial files](https://github.com/MEDS2007/web-typography-tutorial)
+					- The [typography tutorial guide is on Blackboard]()
 				</section>
 			</section>
 
 			<section class="left-align">
-				<section data-markdown>
+				<section data-markdown class="crammed">
 					# JAVASCRIPT: **01**
 
-					text
+					## How is JavaScript used?
+
+					- form **validation** of user input
+					- handling **data** (e.g. JSON)
+					- interactive **user interfaces** and feedback
+					- web-based **apps** (mobile and desktop)
+					- web and mobile **frameworks**
+					- **applications** built on web technologies
+					- **games** with HTML5 canvas ([HTML5 Games website](http://html5games.com/Best/702b9531-c136-437a-ab97-0b209d893b55))
+					- **3D animation** with canvas and [WebGL](http://caniuse.com/#feat=webgl) ([F1 car](http://helloracer.com/webgl/), [Aquarium](http://webglsamples.org/aquarium/aquarium.html))
 				</section>
 
-				<section data-markdown>
+				<section data-markdown class="crammed">
 					# JAVASCRIPT: **02**
 
-					text
+					## JAVASCRIPT HISTORY
+
+					- **1995:** JavaScript created by [Brendan Eich](https://brendaneich.com/) as Mocha/LiveScript
+					- **1997:** ECMAScript standard established ([see ECMA](http://www.ecma-international.org/ "Standardization of Information and Communication Technology and Consumer Electronics: an international private (membership-based) non-profit standards organization for information and communication systems"))
+					- **1999:** ES3 - Microsoft discover www. IE5 everywhere.
+					- **2000–2005:** [XMLHttpRequest](https://hpbn.co/xmlhttprequest/) (AJAX): Outlook Web Access (2000), Gmail (2004), Google Maps (2005)
+					- **2009:** ES5 - established JavaScript, and standard [JSON](http://www.w3schools.com/js/js_json_intro.asp "JSON: the nice introduction")
+					- **2015:** ES6/ECMAScript2015 - mostly syntactic sugar, because no firm agreement on anything more radical
+
+					[Condensed from benmccormick.org](https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/)
 				</section>
 
 				<section data-markdown>
 					# JAVASCRIPT: **03**
 
-					text
+					## THE BROWSER EVENT LOOP
+
+					Inside the browser, everything runs in an **event loop** so you think in terms of **event handlers** that **listen** for events triggered by the user or other processes:
+					
+					``` javascript
+					myElement.addEventListener("id-name", do_stuff);
+					```
+
+					While CSS can be triggered by focus/hover/etc., JavaScript can listen for **hundreds** of events:
+
+					Massive list: [Web Event reference (MDN)](https://developer.mozilla.org/en-US/docs/Web/Events)
 				</section>
 
-				<section data-markdown>
+				<section data-markdown class="crammed">
 					# JAVASCRIPT: **04**
 
-					text
+					## JAVASCRIPT OBJECTS
+
+					A [JavaScript object](http://www.w3schools.com/js/js_objects.asp) contains a series of colon-separated name-value pairs (no comma after the last one!!) enclosed in curly braces `{}`:
+
+					```javascript
+					var car = {
+						manufacturer: "Tesla",
+						model: "Model S",
+						range: "300",
+						colour: "red",
+						start: function() {startMyCarStuffHere}
+					};
+					```
+
+					You can have an **array of objects**, which is similar to a common data format called **JSON**, often used for online data sources.
+				</section>
+
+				<section data-markdown class="crammed">
+					# JAVASCRIPT: **05**
+
+					## TWO EXAMPLES
+
+					In a browser, everything runs in an **event loop** so you use **event handlers** to **listen** for events triggered by the user or other processes:
+					
+					``` javascript
+					var mystuff = document.getElementById("my-id-here");
+					
+					mystuff.addEventListener("id-name", do_stuff);
+					
+					function do_stuff() {
+						alert("You clicked me!");
+					}
+					```
+
+					While CSS can be triggered by focus/hover/etc., JavaScript can listen for **hundreds** of events: [Web Event reference (MDN)](https://developer.mozilla.org/en-US/docs/Web/Events)
+				</section>
+
+				<section>
+					<h1>JAVASCRIPT: <strong>06</strong></h1>
+
+					<button id="myBtn">What's the date?</button>
+
+					<p id="demo">I've no idea. Click the button.</p>
+
+					<script>
+					document.getElementById("myBtn").addEventListener("click", displayDate);
+
+					function displayDate() {
+						var d = new Date();
+						document.getElementById("demo").innerHTML = "Oh, it’s: " + d.toDateString();
+					}
+					</script>
+
+					<h2>RESOURCES:</h2>
+					<p>
+						<a href="http://www.w3schools.com/js/js_htmldom_eventlistener.asp">W3Schools: JavaScript HTML DOM EventListener</a><br>
+						<a href="http://www.w3schools.com/jsref/jsref_todatestring.asp">W3Schools: JavaScript toDateString() Method</a>
+					</p>
+				</section>
+
+				<section data-markdown class="crammed">
+					# JAVASCRIPT: **07**
+					The code that showed the date:
+					
+					## HTML:
+					```html
+					&lt;button id="myBtn">What's the date?&lt;/button>
+
+					&lt;p id="demo">I've no idea. Click the button.&lt;/p>
+					```
+
+					## JAVASCRIPT:
+					```javascript
+					document.getElementById("myBtn").addEventListener("click", displayDate);
+
+					function displayDate() {
+						document.getElementById("demo").innerHTML = Date();
+					}
+					```
+				</section>
+
+				<section>
+					<h1>JAVASCRIPT: <strong>08</strong></h1>
+
+					<p>Hello, <span id="my-name">anonymous user! What’s your name?</span></p>
+
+					<form id="get-name" action="#" method="post">
+						<label for="user-name">Enter name:</label>
+						<input type="text" id="user-name" placeholder="name here please" style="font-size: 1em">
+						<input type="submit" style="background: #ccc; color: #666; border-radius: 10%; font-size: 1em;">
+					</form>
+
+					<script>
+						var myName = document.getElementById("my-name"); 
+						var userName = document.getElementById("user-name"); 
+						var getName = document.getElementById("get-name");
+
+						function PerformGreeting() {
+							myName.innerHTML = '<strong>' + userName.value + '</strong>!';
+
+							event.preventDefault(); // disables default form submission
+							return false; // prevents further "bubbling" up of event
+						}
+
+						getName.addEventListener("submit", PerformGreeting);
+					</script>
+
+					<h2 style="margin-top: 0.5em;">RESOURCES:</h2>
+					<p>
+						<a href="https://github.com/CTEC3905/javascript-01">A simple introduction to JavaScript and the DOM</a><br>
+						<a href="https://github.com/CTEC3905/javascript_02_localstorage">A simple introduction to JavaScript and Local Storage</a>
+					</p>
 				</section>
 			</section>
-			
+
 		</div>
 	<div>
 
