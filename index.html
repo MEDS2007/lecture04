@@ -296,7 +296,7 @@
 					``` javascript
 					var mystuff = document.getElementById("my-id-here");
 					
-					mystuff.addEventListener("id-name", do_stuff);
+					mystuff.addEventListener("click", do_stuff);
 					
 					function do_stuff() {
 						alert("You clicked me!");
@@ -345,7 +345,8 @@
 					document.getElementById("myBtn").addEventListener("click", displayDate);
 
 					function displayDate() {
-						document.getElementById("demo").innerHTML = Date();
+						var d = new Date();
+						document.getElementById("demo").innerHTML = "Oh, it’s: " + d.toDateString();
 					}
 					```
 				</section>
