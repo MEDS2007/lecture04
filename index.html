@@ -419,10 +419,7 @@
           var car = {
             make: "Tesla",
             model: "Model S 100D",
-            range: "335",
-            info: function() {
-              alert(`The ${car.make} ${car.model} has a ${car.range} mile range.`);
-            }
+            range: "335"
           };
           ```
           
@@ -446,7 +443,7 @@
             const question = document.getElementById("question");
             const answer = document.getElementById("answer");
             let info = function() {
-              answer.innerHTML = `The ${car.make} ${car.model} has a <strong>${car.range} mile</strong> range.`;
+              answer.innerHTML = `The <strong>${car.make} ${car.model}</strong> has a <strong>${car.range} mile</strong> range.`;
             }
             question.addEventListener("click", info);
           </script>
@@ -468,11 +465,14 @@
             model: "Model S 100D",
             range: "335",
           };
+          
           const question = document.getElementById("question");
           const answer = document.getElementById("answer");
+
           let info = function() {
-            answer.innerHTML = `The ${car.make} ${car.model} has a <strong>${car.range} mile</strong> range.`;
+            answer.innerHTML = `The &lt;strong>${car.make} ${car.model}&lt;/strong> has a &lt;strong>${car.range} mile&lt;/strong> range.`;
           }
+          
           question.addEventListener("click", info);
           ```
         </section>
@@ -516,6 +516,9 @@
 
           ```javascript
           const picture = document.getElementById("picture");
+          const photo1 = document.getElementById("photo1");
+          const photo2 = document.getElementById("photo2");
+
           function showImage(whichPic) {
             picture.innerHTML = "";
             if (whichPic === "photo1") {
@@ -526,8 +529,7 @@
               picture.classList.add("cat");
             }
           }
-          const photo1 = document.getElementById("photo1");
-          const photo2 = document.getElementById("photo2");
+          
           photo1.addEventListener("click", function(){ showImage(this.id) });
           photo2.addEventListener("click", showImage);
           ```
