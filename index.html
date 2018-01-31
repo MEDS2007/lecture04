@@ -42,18 +42,16 @@
       height: 178px;
       width: 300px;
       background-repeat: no-repeat;
-      border: solid green 2px;
+      border: solid green 4px;
       transition: all 1s;
     }
     #picture.car {
-      border: solid gray 2px;
+      border-color: silver;
       background-image: url("images/tesla-model-s.jpg");
-      transition: all 1s;
     }
     #picture.cat {
-      border: solid pink 2px;
+      border-color: pink;
       background-image: url("images/kitten.jpg");
-      transition: all 1s;
     }
   </style>
 </head>
@@ -206,7 +204,7 @@
 					`infinite` runs forever, seconds/milliseconds limit time
 
 					The changes are user-defined in a separate  
-					`@keyframes` code block
+					`@keyframes` code block…
 				</section>
 
 				<section data-markdown class="crammed">
@@ -237,7 +235,7 @@
 
 					## **ANIMATION** WHAT IS (NOT) ANIMATABLE?
 
-					**not** `display: none` `block` etc.
+					**not** `display: none` or `display: block` etc.
 
 					[Animatable CSS properties (W3Schools)](http://www.w3schools.com/CSSref/css_animatable.asp)  
 					
@@ -255,19 +253,20 @@
 					- [Original Hover Effects](http://tympanus.net/Tutorials/OriginalHoverEffects/)
 					- [Chessboard vacuum (Ana Tudor)](http://codepen.io/thebabydino/pen/FpAun?editors=0100)
 					- [Bending effect - page flip (Fabrizio Bianchi)](http://codepen.io/fbrz/pen/whxbF)
-					- [CSS solar system (Codecademy)](https://www.codecademy.com/courses/web-beginner-en-ymqg0/0/1)
 					- [Rotating colour box (CodePen)](http://codepen.io/yoksel/pen/nxgrp)
 				</section>
 			</section>
+      <!-- - [CSS solar system (Codecademy)](https://www.codecademy.com/courses/web-beginner-en-ymqg0/0/1) -->
 
 			<section class="left-align">
 				<section data-markdown>
-					# WEB **TYPOGRAPHY**: **01**
-
-					## INTRODUCTION TO TUTORIAL
-
-					- You can [download the typography tutorial files](https://github.com/MEDS2007/web-typography-tutorial)
-					- The [typography tutorial guide is on Blackboard]()
+          # WEB **TYPOGRAPHY**
+          
+          ## A TUTORIAL
+          
+          This will help you understand how to control type on the web.
+          
+          You can [download the typography tutorial files here](https://github.com/MEDS2007/web-typography-tutorial).
 				</section>
 			</section>
 
@@ -284,7 +283,7 @@
 					- web and mobile **frameworks**
 					- **applications** built on web technologies
 					- **games** with HTML5 canvas ([HTML5 Games website](http://html5games.com/Best/702b9531-c136-437a-ab97-0b209d893b55))
-					- **3D animation** with canvas and [WebGL](http://caniuse.com/#feat=webgl) ([F1 car](http://helloracer.com/webgl/), [Aquarium](http://webglsamples.org/aquarium/aquarium.html))
+					- **3D animation** with canvas and WebGL ([F1 car](http://helloracer.com/webgl/), [Aquarium](http://webglsamples.org/aquarium/aquarium.html))
 				</section>
 				<section data-markdown class="crammed">
 					# JAVASCRIPT: **02**
@@ -302,36 +301,41 @@
 				</section>
 
 				<section data-markdown>
-					# JAVASCRIPT: **03**
-
-					## THE BROWSER EVENT LOOP
-
-					Inside the browser, everything runs in an **event loop** so you think in terms of **event handlers** that **listen** for events triggered by the user or other processes:
-					
-					``` javascript
-					myElement.addEventListener("click", do_stuff);
-					```
-
-					While CSS can be triggered by focus/hover/etc., JavaScript can listen for **hundreds** of events, not just ‘click’.
+          # JAVASCRIPT: **03**
+          
+          ## THE BROWSER EVENT LOOP
+          
+          In a browser, everything runs in an **event loop** so you use **event handlers** to **listen** for **events** triggered by the **user** or other **processes**:
+          
+          ``` javascript
+          myElement.addEventListener("click", do_stuff);
+          ```
+          
+          While CSS can be triggered by focus/hover/etc.,  
+          JavaScript can listen for **hundreds** of events. See:  
+          [Web Event reference (MDN)](https://developer.mozilla.org/en-US/docs/Web/Events)
 				</section>
 				<section data-markdown class="crammed">
-					# JAVASCRIPT: **04**
+          # JAVASCRIPT: **04**
+          
+          ## SOME EXAMPLES
+          
+          The simplest possible example:
 
-					## TWO EXAMPLES
+          ```html
+          &lt;p id="my-id">Click me!&lt;/p>
+          ```
 
-					In a browser, everything runs in an **event loop** so you use **event handlers** to **listen** for events triggered by the user or other processes:
-					
-					``` javascript
-					var mystuff = document.getElementById("my-id-here");
-					
-					mystuff.addEventListener("click", do_stuff);
-					
-					function do_stuff() {
-						alert("You clicked me!");
-					}
-					```
 
-					While CSS can be triggered by focus/hover/etc., JavaScript can listen for **hundreds** of events: [Web Event reference (MDN)](https://developer.mozilla.org/en-US/docs/Web/Events)
+          ``` javascript
+          const clickThing = document.getElementById("my-id");
+          
+          clickThing.addEventListener("click", do_stuff);
+          
+          function do_stuff() {
+            alert("You clicked me!");
+          }
+          ```
 				</section>
 				<section>
 					<h1>JAVASCRIPT: <strong>05</strong></h1>
@@ -344,8 +348,8 @@
 					document.getElementById("myBtn").addEventListener("click", displayDate);
 
 					function displayDate() {
-						var d = new Date();
-						document.getElementById("demo").innerHTML = "Oh, it’s: " + d.toDateString();
+						let d = new Date();
+						document.getElementById("demo").innerHTML = `Oh, it’s: ${d.toDateString()}!`;
 					}
 					</script>
 
@@ -356,34 +360,37 @@
 					</p>
 				</section>
 				<section data-markdown class="crammed">
-					# JAVASCRIPT: **06**
-					The code that showed the date:
-					
-					## HTML:
-					```html
-					&lt;button id="myBtn">What's the date?&lt;/button>
+          # JAVASCRIPT: **05a**
+          
+          The code that showed the date:
+          
+          **HTML:**
+          
+          ```html
+          &lt;button id="myBtn">What's the date?&lt;/button>
+          
+          &lt;p id="demo">I've no idea. Click the button.&lt;/p>
+          ```
+          
+          **JavaScript:**
 
-					&lt;p id="demo">I've no idea. Click the button.&lt;/p>
-					```
-
-					## JAVASCRIPT:
-					```javascript
-					document.getElementById("myBtn").addEventListener("click", displayDate);
-
-					function displayDate() {
-						var d = new Date();
-						document.getElementById("demo").innerHTML = "Oh, it’s: " + d.toDateString();
-					}
-					```
+          ```javascript
+          document.getElementById("myBtn").addEventListener("click", displayDate);
+          
+          function displayDate() {
+            let d = new Date();
+            document.getElementById("demo").innerHTML = `Oh, it’s: ${d.toDateString()}!`;
+          }
+          ```
 				</section>
 				<section>
-					<h1>JAVASCRIPT: <strong>07</strong></h1>
+					<h1>JAVASCRIPT: <strong>06</strong></h1>
 
 					<p>Hello, <span id="my-name">anonymous user! What’s your name?</span></p>
 
 					<form id="get-name" action="#" method="post">
 						<label for="user-name">Enter name:</label>
-						<input type="text" id="user-name" placeholder="name here please" style="font-size: 1em">
+						<input type="text" id="user-name" placeholder="name here please :-)" style="font-size: 1em">
 						<input type="submit" style="background: #ccc; color: #666; border-radius: 10%; font-size: 1em;">
 					</form>
 
@@ -393,27 +400,33 @@
 						const getName = document.getElementById("get-name");
 
 						function PerformGreeting() {
-							myName.innerHTML = '<strong>' + userName.value + '</strong>!';
-
+							if(userName.value){
+                myName.innerHTML = `<strong>${userName.value}</strong>!`;
+              } else {
+                myName.innerHTML = `<strong>person with no name</strong>!`;
+              }
 							event.preventDefault(); // disables default form submission
 							return false; // prevents further "bubbling" up of event
 						}
 
 						getName.addEventListener("submit", PerformGreeting);
-					</script>
+          </script>
 
-					<h2 style="margin-top: 0.5em;">RESOURCES:</h2>
-					<p>
+					<h2 style="margin-top: 0.5em;"><strong>ADVANCED RESOURCES:</strong></h2>
+          
+          <p>(Code is too long to show here)</p>
+
+          <p>
 						<a href="https://github.com/CTEC3905/javascript-01">A simple introduction to JavaScript and the DOM</a><br>
 						<a href="https://github.com/CTEC3905/javascript_02_localstorage">A simple introduction to JavaScript and Local Storage</a>
 					</p>
 				</section>
 				<section data-markdown class="crammed">
-          # JAVASCRIPT: **08**
+          # JAVASCRIPT: **07**
           
           ## JAVASCRIPT OBJECTS: 1
           
-          A [JavaScript object](http://www.w3schools.com/js/js_objects.asp) contains a series of colon-separated name-value pairs (no comma after the last one!!) enclosed in curly braces `{}`:
+          A [JavaScript object](http://www.w3schools.com/js/js_objects.asp) contains a series of **colon-separated name-value pairs** (no comma after the last one!!) enclosed in curly braces `{}`:
           
           ```javascript
           var car = {
@@ -426,7 +439,7 @@
           You can have an **array of objects**, which is similar to a common data format called **JSON**, often used for online data sources.
         </section>
         <section>
-          <h1>JAVASCRIPT: <strong>09</strong></h1>
+          <h1>JAVASCRIPT: <strong>08</strong></h1>
 
           <h2>JAVASCRIPT OBJECTS: 2</h2>
 
@@ -448,10 +461,10 @@
             question.addEventListener("click", info);
           </script>
         </section>
-        <section data-markdown class="crammed">
-          # JAVASCRIPT: **10**
+        <section data-markdown class="smallcode">
+          # JAVASCRIPT: **08 CODE**
 
-          ## JAVASCRIPT OBJECTS: 3
+          **HTML and JavaScript:**
 
           ```html
           &lt;p id="question">How many miles will the Model S travel?&lt;/p>
@@ -460,26 +473,22 @@
           ```
 
           ```javascript
-          let car = {
-            make: "Tesla",
-            model: "Model S 100D",
-            range: "335",
-          };
-          
-          const question = document.getElementById("question");
-          const answer = document.getElementById("answer");
+          &lt;script>
+            const question = document.getElementById("question");
+            const answer = document.getElementById("answer");
 
-          let info = function() {
-            answer.innerHTML = `The &lt;strong>${car.make} ${car.model}&lt;/strong> has a &lt;strong>${car.range} mile&lt;/strong> range.`;
-          }
-          
-          question.addEventListener("click", info);
+            let info = function() {
+              answer.innerHTML = `The &lt;strong>${car.make} ${car.model}&lt;/strong> has a &lt;strong>${car.range} mile&lt;/strong> range.`;
+            }
+            
+            question.addEventListener("click", info);
+          &lt;/script>
           ```
         </section>
         <section>
-          <h1>JAVASCRIPT: <strong>11</strong></h1>
+          <h1>JAVASCRIPT: <strong>09</strong></h1>
 
-          <h2>JAVASCRIPT OBJECTS: 4</h2>
+          <h2>JAVASCRIPT OBJECTS: 3</h2>
 
           <p>Show me a photo of: <span id="photo1">the Tesla Model S</span> OR <span id="photo2">a kitten</span>!</p>
 
@@ -503,10 +512,36 @@
             photo2.addEventListener("click", showImage);
           </script>
         </section>
-        <section data-markdown class="crammed">
-          # JAVASCRIPT: **12**
+        <section data-markdown class="smallcode">
+          # JAVASCRIPT: **09 CODE**
 
-          ## JAVASCRIPT OBJECTS: 5
+          **CSS:**
+            
+          ```css
+          #picture {
+            font-size: 75%;
+            text-align: center;
+            line-height: 178px;
+            height: 178px;
+            width: 300px;
+            background-repeat: no-repeat;
+            border: solid green 4px;
+            transition: all 1s;
+          }
+          #picture.car {
+            border-color: silver;
+            background-image: url("images/tesla-model-s.jpg");
+          }
+          #picture.cat {
+            border-color: pink;
+            background-image: url("images/kitten.jpg");
+          }
+          ```
+        </section>
+        <section data-markdown class="smallcode">
+          # JAVASCRIPT: **09 CODE**
+
+          **HTML and JavaScript:**
 
           ```html
           &lt;p>Show me a photo of: &lt;span id="photo1">the Tesla Model S&lt;/span> OR &lt;span id="photo2">a kitten&lt;/span>!&lt;/p>
