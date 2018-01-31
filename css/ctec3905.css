@@ -28,6 +28,7 @@ button,
 .ref-links a { font-size: 0.75em; }
 .crammed ul,
 .crammed p { font-size: 0.8em; }
+.crammed pre code { font-size: 1em; }
 .ext-links a[title^="ext:"]:after {
   position: relative;
   text-decoration: none;

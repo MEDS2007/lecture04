@@ -25,7 +25,37 @@
 		link.type = 'text/css';
 		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 		document.getElementsByTagName( 'head' )[0].appendChild( link );
-	</script>
+  </script>
+  <style>
+    #question, #photo1, #photo2 {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    #question:hover, #photo1:hover, #photo2:hover {
+      text-decoration: none;
+      color: #ccc;
+    }
+    #picture {
+      font-size: 75%;
+      text-align: center;
+      line-height: 178px;
+      height: 178px;
+      width: 300px;
+      background-repeat: no-repeat;
+      border: solid green 2px;
+      transition: all 1s;
+    }
+    #picture.car {
+      border: solid gray 2px;
+      background-image: url("images/tesla-model-s.jpg");
+      transition: all 1s;
+    }
+    #picture.cat {
+      border: solid pink 2px;
+      background-image: url("images/kitten.jpg");
+      transition: all 1s;
+    }
+  </style>
 </head>
 
 <body>
@@ -256,7 +286,6 @@
 					- **games** with HTML5 canvas ([HTML5 Games website](http://html5games.com/Best/702b9531-c136-437a-ab97-0b209d893b55))
 					- **3D animation** with canvas and [WebGL](http://caniuse.com/#feat=webgl) ([F1 car](http://helloracer.com/webgl/), [Aquarium](http://webglsamples.org/aquarium/aquarium.html))
 				</section>
-
 				<section data-markdown class="crammed">
 					# JAVASCRIPT: **02**
 
@@ -285,7 +314,6 @@
 
 					While CSS can be triggered by focus/hover/etc., JavaScript can listen for **hundreds** of events, not just ‘click’.
 				</section>
-
 				<section data-markdown class="crammed">
 					# JAVASCRIPT: **04**
 
@@ -305,7 +333,6 @@
 
 					While CSS can be triggered by focus/hover/etc., JavaScript can listen for **hundreds** of events: [Web Event reference (MDN)](https://developer.mozilla.org/en-US/docs/Web/Events)
 				</section>
-
 				<section>
 					<h1>JAVASCRIPT: <strong>05</strong></h1>
 
@@ -328,7 +355,6 @@
 						<a href="http://www.w3schools.com/jsref/jsref_todatestring.asp">W3Schools: JavaScript toDateString() Method</a>
 					</p>
 				</section>
-
 				<section data-markdown class="crammed">
 					# JAVASCRIPT: **06**
 					The code that showed the date:
@@ -350,7 +376,6 @@
 					}
 					```
 				</section>
-
 				<section>
 					<h1>JAVASCRIPT: <strong>07</strong></h1>
 
@@ -363,9 +388,9 @@
 					</form>
 
 					<script>
-						var myName = document.getElementById("my-name"); 
-						var userName = document.getElementById("user-name"); 
-						var getName = document.getElementById("get-name");
+						const myName = document.getElementById("my-name"); 
+						const userName = document.getElementById("user-name"); 
+						const getName = document.getElementById("get-name");
 
 						function PerformGreeting() {
 							myName.innerHTML = '<strong>' + userName.value + '</strong>!';
@@ -383,27 +408,131 @@
 						<a href="https://github.com/CTEC3905/javascript_02_localstorage">A simple introduction to JavaScript and Local Storage</a>
 					</p>
 				</section>
-
 				<section data-markdown class="crammed">
 					# JAVASCRIPT: **08**
 
-					## JAVASCRIPT OBJECTS
+					## JAVASCRIPT OBJECTS: 1
 
 					A [JavaScript object](http://www.w3schools.com/js/js_objects.asp) contains a series of colon-separated name-value pairs (no comma after the last one!!) enclosed in curly braces `{}`:
 
 					```javascript
 					var car = {
-						manufacturer: "Tesla",
-						model: "Model S",
-						range: "300",
-						colour: "red",
-						start: function() {startMyCarStuffHere}
-					};
+						make: "Tesla",
+            model: "Model S 100D",
+            range: "335",
+            info: function() {
+              alert(`The ${car.make} ${car.model} has a ${car.range} mile range.`);
+            }
+          };
 					```
 
 					You can have an **array of objects**, which is similar to a common data format called **JSON**, often used for online data sources.
-				</section>
-			</section>
+        </section>
+        <section>
+          <h1>JAVASCRIPT: <strong>09</strong></h1>
+
+          <h2>JAVASCRIPT OBJECTS: 2</h2>
+
+          <p id="question">How many miles will the Model S travel?</p>
+
+          <p id="answer"></p>
+
+          <script>
+            let car = {
+              make: "Tesla",
+              model: "Model S 100D",
+              range: "335",
+            };
+            const question = document.getElementById("question");
+            const answer = document.getElementById("answer");
+            let info = function() {
+              answer.innerHTML = `The ${car.make} ${car.model} has a <strong>${car.range} mile</strong> range.`;
+            }
+            question.addEventListener("click", info);
+          </script>
+        </section>
+        <section data-markdown class="crammed">
+          # JAVASCRIPT: **10**
+
+          ## JAVASCRIPT OBJECTS: 3
+
+          ```html
+          &lt;p id="question">How many miles will the Model S travel?&lt;/p>
+
+          &lt;p id="answer">&lt;/p>
+          ```
+
+          ```javascript
+          let car = {
+            make: "Tesla",
+            model: "Model S 100D",
+            range: "335",
+          };
+          const question = document.getElementById("question");
+          const answer = document.getElementById("answer");
+          let info = function() {
+            answer.innerHTML = `The ${car.make} ${car.model} has a <strong>${car.range} mile</strong> range.`;
+          }
+          question.addEventListener("click", info);
+          ```
+        </section>
+        <section>
+          <h1>JAVASCRIPT: <strong>11</strong></h1>
+
+          <h2>JAVASCRIPT OBJECTS: 4</h2>
+
+          <p>Show me a photo of: <span id="photo1">the Tesla Model S</span> OR <span id="photo2">a kitten</span>!</p>
+
+          <p id="picture" class="text">picture will appear</p>
+            
+          <script>
+            const picture = document.getElementById("picture");
+            function showImage(whichPic) {
+              picture.innerHTML = "";
+              if (whichPic === "photo1") {
+                picture.classList.remove("cat");
+                picture.classList.add("car");
+              } else {
+                picture.classList.remove("car");
+                picture.classList.add("cat");
+              }
+            }
+            const photo1 = document.getElementById("photo1");
+            const photo2 = document.getElementById("photo2");
+            photo1.addEventListener("click", function(){ showImage(this.id) });
+            photo2.addEventListener("click", showImage);
+          </script>
+        </section>
+        <section data-markdown class="crammed">
+          # JAVASCRIPT: **12**
+
+          ## JAVASCRIPT OBJECTS: 5
+
+          ```html
+          &lt;p>Show me a photo of: &lt;span id="photo1">the Tesla Model S&lt;/span> OR &lt;span id="photo2">a kitten&lt;/span>!&lt;/p>
+
+          &lt;p id="picture" class="text">picture will appear&lt;/p>
+          ```
+
+          ```javascript
+          const picture = document.getElementById("picture");
+          function showImage(whichPic) {
+            picture.innerHTML = "";
+            if (whichPic === "photo1") {
+              picture.classList.remove("cat");
+              picture.classList.add("car");
+            } else {
+              picture.classList.remove("car");
+              picture.classList.add("cat");
+            }
+          }
+          const photo1 = document.getElementById("photo1");
+          const photo2 = document.getElementById("photo2");
+          photo1.addEventListener("click", function(){ showImage(this.id) });
+          photo2.addEventListener("click", showImage);
+          ```
+        </section>
+      </section>
 
 			<section data-markdown>
 				# **FRONT-END** WEB TECHNOLOGIES
