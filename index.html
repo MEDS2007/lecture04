@@ -300,12 +300,14 @@
       
       ## THE BROWSER EVENT LOOP
       
-      In a browser, everything runs in an **event loop** so you use **event handlers** to **listen** for **events** triggered by the **user** or other **processes**:
+      In a browser, everything runs in an **event loop** so you use **event handlers** to **listen** for **events** triggered by the **user** or other **processes** e.g.
       
       ``` javascript
       myElement.addEventListener("click", MyFunction);
       ```
       
+      This ‘listens’ for a `click` on ‘myElement’, then calls a `function` ‘MyFunction’ which will do whatever
+
       While CSS can be triggered by focus/hover/etc.,  
       JavaScript can listen for **hundreds** of events. See:  
       [Web Event reference (MDN)](https://developer.mozilla.org/en-US/docs/Web/Events)
@@ -315,7 +317,7 @@
 
 			## How is JavaScript used?
 
-			- form **validation** of user input
+			- form **validation** and **processing** of user input
 			- handling **data** (e.g. JSON)
 			- interactive **user interfaces** and feedback
 			- web-based **apps** (mobile and desktop)
@@ -331,42 +333,52 @@
 
 <!-- JAVASCRIPT EXAMPLES -->
   
-  <section>
+  <section class="left-align">
 		<section data-markdown class="crammed">
       # JAVASCRIPT: **04**
       
       ## SOME EXAMPLES
       
       The simplest possible example:
+      
+      In the **HTML** (.html) file:
 
       ```html
       &lt;p id="my-id">Click me!&lt;/p>
       ```
 
+      In the **JavaScript** (.js) file:
 
       ``` javascript
       const clickThing = document.getElementById("my-id");
       
-      clickThing.addEventListener("click", do_stuff);
-      
       function do_stuff() {
         alert("You clicked me!");
       }
+      
+      clickThing.addEventListener("click", do_stuff);
       ```
 		</section>
 		<section>
 			<h1>JAVASCRIPT: <strong>05</strong></h1>
+      
+      <p id="my-id">Click me!</p>
 
-			<button id="myBtn">What's the date?</button>
+			<button id="myBtn" style="border-radius: 4px; background: #aaa;">What's the date?</button>
 
 			<p id="demo">I've no idea. Click the button.</p>
 
 			<script>
-			document.getElementById("myBtn").addEventListener("click", displayDate);
+			const clickThing = document.getElementById("my-id");
+      const do_stuff = () => { alert("You clicked me!"); }
+      clickThing.addEventListener("click", do_stuff);      
+      
+      document.getElementById("myBtn").addEventListener("click", showDate);
+      const dateDemo = document.getElementById("demo");
 
-			function displayDate() {
+			function showDate() {
 				let d = new Date();
-				document.getElementById("demo").innerHTML = `Oh, it’s: ${d.toDateString()}!`;
+				dateDemo.innerHTML = `Oh, it’s: ${d.toDateString()}!`;
 			}
 			</script>
 
@@ -376,7 +388,7 @@
 				<a href="http://www.w3schools.com/jsref/jsref_todatestring.asp">W3Schools: JavaScript toDateString() Method</a>
 			</p>
 		</section>
-		<section data-markdown class="crammed">
+		<section data-markdown class="crammed smallcode">
       # JAVASCRIPT: **05a**
       
       The code that showed the date:
@@ -392,24 +404,25 @@
       **JavaScript:**
 
       ```javascript
-      document.getElementById("myBtn").addEventListener("click", displayDate);
+      document.getElementById("myBtn").addEventListener("click", showDate);
+      const dateDemo = document.getElementById("demo");
       
-      function displayDate() {
+      function showDate() {
         let d = new Date();
-        document.getElementById("demo").innerHTML = `Oh, it’s: ${d.toDateString()}!`;
+        dateDemo.innerHTML = `Oh, it’s: ${d.toDateString()}!`;
       }
       ```
 		</section>
 		<section>
 			<h1>JAVASCRIPT: <strong>06</strong></h1>
 
-			<p>Hello, <span id="my-name">anonymous user! What’s your name?</span></p>
-
 			<form id="get-name" action="#" method="post">
 				<label for="user-name">Enter name:</label>
 				<input type="text" id="user-name" placeholder="name here please :-)" style="font-size: 1em">
 				<input type="submit" style="background: #ccc; color: #666; border-radius: 10%; font-size: 1em;">
 			</form>
+
+			<p>Hello, <span id="my-name">anonymous user! What’s your name?</span></p>
 
 			<script>
 				const myName = document.getElementById("my-name"); 
@@ -429,10 +442,10 @@
 				getName.addEventListener("submit", PerformGreeting);
       </script>
 
-			<h2 style="margin-top: 0.5em;"><strong>ADVANCED RESOURCES:</strong></h2>
-      
       <p>(Code is too long to show here)</p>
 
+			<h2 style="margin-top: 0.5em;"><strong>ADVANCED RESOURCES:</strong></h2>
+      
       <p>
 				<a href="https://github.com/CTEC3905/javascript-01">A simple introduction to JavaScript and the DOM</a><br>
 				<a href="https://github.com/CTEC3905/javascript_02_localstorage">A simple introduction to JavaScript and Local Storage</a>
