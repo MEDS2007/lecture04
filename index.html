@@ -492,19 +492,15 @@
 		<section>
 			<h1>JAVASCRIPT DEMOS: <strong>05</strong></h1>
 
-			<form id="get-name" action="#" method="post">
-				<label for="user-name">Enter name:</label>
-				<input type="text" id="user-name" placeholder="name here please :-)" style="font-size: 1em">
+			<form id="getName" action="#" method="post">
+				<label for="userName">Enter name:</label>
+				<input id="userName" type="text" placeholder="name here please :-)" style="font-size: 1em">
 				<input type="submit" style="background: #ccc; color: #666; border-radius: 10%; font-size: 1em;">
 			</form>
 
-			<p>Hello, <span id="my-name">anonymous user! Your name?</span></p>
+			<p>Hello, <span id="myName">anonymous user! Your name?</span></p>
 
 			<script>
-				const getName = document.getElementById("get-name");
-				const userName = document.getElementById("user-name"); 
-				const myName = document.getElementById("my-name"); 
-
 				function PerformGreeting() {
           if(userName.value){
             myName.innerHTML = `<strong>${userName.value}</strong>!`;
@@ -524,20 +520,16 @@
       here’s the **HTML** that grabbed the name and the **JavaScript** that displayed it:
       
       ```html
-      &lt;form id="get-name" action="#" method="post">
-        &lt;label for="user-name">Enter name:&lt;/label>
-        &lt;input type="text" id="user-name" placeholder="name here please :-)">
+      &lt;form id="getName" action="#" method="post">
+        &lt;label for="userName">Enter name:&lt;/label>
+        &lt;input id="userName" type="text" placeholder="name here please :-)">
         &lt;input type="submit">
       &lt;/form>
 
-      &lt;p>Hello, &lt;span id="my-name">anonymous user! Your name?&lt;/span>&lt;/p>
+      &lt;p>Hello, &lt;span id="myName">anonymous user! Your name?&lt;/span>&lt;/p>
       ```
       
       ```javascript
-      const getName = document.getElementById("get-name");
-      const userName = document.getElementById("user-name"); 
-      const myName = document.getElementById("my-name"); 
-
       function PerformGreeting() {
         if(userName.value){
           myName.innerHTML = `&lt;strong>${userName.value}&lt;/strong>!`;
@@ -561,7 +553,6 @@
       <p id="picture" class="text">picture will appear</p>
         
       <script>
-        const picture = document.getElementById("picture");
         function showImage(whichPic) {
           picture.innerHTML = "";
           if (whichPic === "photo1") {
@@ -572,8 +563,6 @@
             picture.classList.add("cat");
           }
         }
-        const photo1 = document.getElementById("photo1");
-        const photo2 = document.getElementById("photo2");
         photo1.addEventListener("click", function(){ showImage(this.id) });
         photo2.addEventListener("click", showImage);
       </script>
@@ -590,10 +579,6 @@
       ```
 
       ```javascript
-      const picture = document.getElementById("picture");
-      const photo1 = document.getElementById("photo1");
-      const photo2 = document.getElementById("photo2");
-
       function showImage(whichPic) {
         picture.innerHTML = "";
         if (whichPic === "photo1") {
@@ -684,11 +669,11 @@
           colour: "red",
           start: function() {startMyCarStuffHere}
         };
-        const question = document.getElementById("question");
-        const answer = document.getElementById("answer");
+
         let info = function() {
           answer.innerHTML = `The <strong>${car.manufacturer} ${car.model}</strong> has a <strong>${car.range.normal} mile</strong> normal range.`;
         }
+        
         question.addEventListener("click", info);
       </script>
     </section>
@@ -707,15 +692,13 @@
       Here’s the **JavaScript**:
 
       ```javascript
-      const question = document.getElementById("question");
-      const answer = document.getElementById("answer");
-
+      // this gets details from the object
       let info = function() {
         answer.innerHTML = `The &lt;strong>${car.manufacturer} ${car.model}&lt;/strong> has a &lt;strong>${car.range} mile&lt;/strong> normal range.`;
       }
 
-      question.addEventListener("click", info);
       // this captures the click
+      question.addEventListener("click", info);
       ```
     </section>
     <!-- END SHARED WITH CTEC3905 -->
