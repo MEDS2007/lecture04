@@ -26,34 +26,6 @@
 		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 		document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
-  <style>
-    #question, #photo1, #photo2 {
-      text-decoration: underline;
-      cursor: pointer;
-    }
-    #question:hover, #photo1:hover, #photo2:hover {
-      text-decoration: none;
-      color: #ccc;
-    }
-    #picture {
-      font-size: 75%;
-      text-align: center;
-      line-height: 178px;
-      height: 178px;
-      width: 300px;
-      background-repeat: no-repeat;
-      border: solid silver 4px;
-      transition: all 1s;
-    }
-    #picture.car {
-      border-color: green;
-      background-image: url("images/tesla-model-s.jpg");
-    }
-    #picture.cat {
-      border-color: pink;
-      background-image: url("images/kitten.jpg");
-    }
-  </style>
 </head>
 
 <body>
@@ -334,8 +306,6 @@
 	</section>
   <!-- END SHARED WITH CTEC39056 LECTURE 03 -->
 
-<!-- OKAY TO HERE -->
-
   <section class="left-align">
 		<section data-markdown>
       # JAVASCRIPT/THE DOM: **01**
@@ -537,7 +507,37 @@
       getName.addEventListener("submit", PerformGreeting);
       ```
 		</section>
+    <!-- UPDATE FROM CTEC3905 lecture 07!! -->
     <section>
+      <style>
+        #question, #photo1, #photo2 {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+        #question:hover, #photo1:hover, #photo2:hover {
+          text-decoration: none;
+          color: #ccc;
+        }
+        #picture {
+          font-size: 75%;
+          text-align: center;
+          line-height: 178px;
+          height: 178px;
+          width: 300px;
+          background-repeat: no-repeat;
+          border: solid silver 4px;
+          transition: all 1s;
+        }
+        #picture.car {
+          border-color: green;
+          background-image: url("images/tesla-model-s.jpg");
+        }
+        #picture.cat {
+          border-color: pink;
+          background-image: url("images/kitten.jpg");
+        }
+      </style>
+      
       <h1>JAVASCRIPT DEMOS: <strong>07</strong></h1>
 
       <p>You can also <strong>manipulate CSS</strong> with JavaScript…<br>
