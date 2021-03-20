@@ -27,6 +27,8 @@ a:link { border-bottom: 2px solid #666; }
 button,
 .ref-links a { font-size: 0.75em; }
 .crammed ul,
+.crammed table,
+.crammed small a,
 .crammed p { font-size: 0.8em; }
 .smallcode pre code { font-size: 1em;  padding: 0.5em}
 .ext-links a[title^="ext:"]:after {
@@ -39,3 +41,6 @@ button,
 .small-table table {
   font-size: 0.58em;
 }
+.last-para-small p:last-child,
+.last-para-small ul:last-child li {
+  font-size: 0.75em}

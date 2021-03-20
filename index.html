@@ -8,11 +8,9 @@
 
 	<meta name="description" content="MEDS2007, Lecture 4">
 	<meta name="author" content="Dave Everitt">
-
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-	<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/moon.css"><!-- beige -->
 	<link rel="stylesheet" href="lib/css/zenburn.css"><!-- syntax highlighting of code -->
@@ -47,7 +45,7 @@
 
 	<section class="left-align">
 		<section data-markdown>
-      # **THE TOPICS**
+      ## **THE TOPICS**
       
       - [CSS **animations**](#/2)
       - [Web **Typography exercise**](#/3)
@@ -57,9 +55,9 @@
 
 	<section class="left-align">
 		<section data-markdown>
-			# CSS ANIMATION: **1**
+			## CSS ANIMATION: **1**
 
-			## COMPONENTS
+			### COMPONENTS
 
 			- [**transitions**](#/2/3) (things to change, over *time*)
 			- [**transformations**](#/2/4) (shape-shifting, *no* timing)
@@ -69,7 +67,7 @@
 		</section>
 
 		<section data-markdown class="crammed smalltext">
-			# CSS ANIMATION: **2**
+			## CSS ANIMATION: **2**
 
 			**TRANSITION:** EXAMPLE 1
 
@@ -92,7 +90,7 @@
 		</section>
 
 		<section data-markdown class="crammed">
-			# CSS ANIMATION: **3**
+			## CSS ANIMATION: **3**
 
 			**TRANSITION:** EXAMPLE 2
 
@@ -109,11 +107,12 @@
 			}
 			```
 
-			[Early article on `transition`, Dan Cederholm, 2010](http://alistapart.com/article/understanding-css3-transitions)
+			[Early article on `transition`, Dan Cederholm, 2010](http://alistapart.com/article/understanding-css3-transitions)  
+      (`-webkit-` is no longer needed so you can always delete lines that start with it)
 		</section>
 
 		<section data-markdown class="crammed">
-			# CSS ANIMATION: **4**
+			## CSS ANIMATION: **4**
 
 			**TRANSITION** CONTROLS
 
@@ -134,7 +133,7 @@
 		</section>
 
 		<section data-markdown class="crammed">
-			# CSS ANIMATION: **5**
+			## CSS ANIMATION: **5**
 			
 			**TRANSFORM**
 			
@@ -142,7 +141,8 @@
 			transform: rotate(70deg);
 			```
 			
-			Can be used alone (not animated) or with `transition` on an element, then `transform` on :hover/another action.
+			Can be used alone (not animated) or on an **element** with  
+      `transition` then `transform` on `:hover`/another action
 
 			The **values** of the `transform` property are:
 								
@@ -155,7 +155,7 @@
 		</section>
 
 		<section data-markdown class="crammed">
-			# CSS ANIMATION: **6**
+			## CSS ANIMATION: **6**
 			
 			**TRANSFORM** REFERENCES, TUTORIALS
 			
@@ -166,7 +166,7 @@
 		</section>
 
 		<section data-markdown>
-			# CSS ANIMATION: **7**
+			## CSS ANIMATION: **7**
 
 			**ANIMATION**
 
@@ -186,7 +186,7 @@
 		</section>
 
 		<section data-markdown class="crammed">
-			# CSS ANIMATION: **8**
+			## CSS ANIMATION: **8**
 			
 			**ANIMATION** KEYFRAMES
 
@@ -204,12 +204,11 @@
 			}
 			```
 
-			Download the [code for this demo animation](https://github.com/CTEC3905/css-animation-01) or [view it here](https://ctec3905.github.io/08-lab/)  
-			(See [W3Schools CSS3 Animations](http://www.w3schools.com/css/css3_animations.asp))
+			See [W3Schools CSS3 Animations](http://www.w3schools.com/css/css3_animations.asp)
 		</section>
 
 		<section data-markdown>
-			# CSS ANIMATION: **9**
+			## CSS ANIMATION: **9**
 
 			**ANIMATION** WHAT IS (NOT) ANIMATABLE?
 
@@ -223,12 +222,13 @@
 		</section>
 
 		<section data-markdown class="crammed">
-      # CSS ANIMATION: **10**
+      ## CSS ANIMATION: **10**
 
-      **EXAMPLE CODE**:
+      <!-- FIX THESE FIRST -->
+      <!-- **EXAMPLE CODE**:
 
       - A [simple CSS-only slideshow](https://github.com/DaveEveritt/pure-css-image-slideshow) ([see demo](https://daveeveritt.github.io/pure-css-image-slideshow/))
-      - A [CSS-only responsive lightbox](https://github.com/DaveEveritt/css-lightbox) ([see demo](https://daveeveritt.github.io/css-lightbox/))
+      - A [CSS-only responsive lightbox](https://github.com/DaveEveritt/css-lightbox) ([see demo](https://daveeveritt.github.io/css-lightbox/)) -->
 
       **ONLINE EXAMPLES**:
 
@@ -239,26 +239,319 @@
       - [Rotating colour box (CodePen)](http://codepen.io/yoksel/pen/nxgrp)
 		</section>
 	</section>
-  <!-- - [CSS solar system (Codecademy)](https://www.codecademy.com/courses/web-beginner-en-ymqg0/0/1) -->
 
 	<section class="left-align">
 		<section data-markdown>
-      # WEB **TYPOGRAPHY**
+      ## WEB TYPOGRAPHY **01**
+
+      > **Choosing a typeface** is **not** typography…
+
+      …but here's a little inspiration that uses Google Fonts:  
+      [Beautiful Web Type](http://hellohappy.org/beautiful-web-type/)
+		</section>
+    <section data-markdown class="last-para-small">
+      ## WEB TYPOGRAPHY **02**
+
+      > our harassed contemporaries simply **cannot take everything** that is printed today.
+      > 
+      > It is the typographer’s task to **divide up, organize** and **interpret** this mass of printed matter in such a way that **the reader** will have a good chance of **finding what is of interest**
+
+      Emil Ruder, famous Swiss typographer, 1969
+		</section>
+    <section data-markdown class="last-para-small">
+      ## WEB TYPOGRAPHY **03**
+
+      > **95%** of the information on the web is **written language**. It is only logical to say that a web designer should get good training in the main discipline of **shaping written information**, in other words: **Typography**.
+
+      <small>Oliver Reichenstein, [Web Design is 95% Typography](https://ia.net/topics/the-web-is-all-about-typography-period), 2006</small>
+		</section>
+    <section data-markdown class="last-para-small">
+      ## WEB TYPOGRAPHY **04**
+
+      recommended **web typography primary sources**:
+
+      - [The Elements of Typographic Style Applied to the Web](http://webtypography.net/toc/)
+      - [Typography chapter, Web Style Guide](https://webstyleguide.com/9-typography.html)  
+
+      <small>Patrick J. Lynch and Sarah Horton, 2016</small>
+		</section>
+    <section data-markdown>
+      ## WEB TYPOGRAPHY **05**
+
+      optimum **line length for readablity** was supposed to be 50-75 characters…
+
+      …but [The Line Length Misconception](https://www.viget.com/articles/the-line-length-misconception/) draws on more recent research, although `line-spacing`, `letter-spacing` and `font-family` helps—see [Optimal Text Layout Line Length](https://www.paulolyslager.com/optimal-text-layout-line-length/)
+
+      …and the advice continues **in more detail** for **mobile devices** in [How To Set Perfect Line Lengths For The Web](http://www.simon-li.com/design-and-code/how-to-set-perfect-line-lengths-for-your-webpages/)
+
+      …and finally [Letterspacing Makes ALL CAPS Easier to Read](https://uxmovement.com/content/how-letterspacing-can-make-all-caps-easier-to-read/)
+<!-- END CTEC SHARE -->
+		</section>
+	</section>
+    
+	<section class="left-align">
+    <section data-markdown>
+      ## TYPOGRAPHY CODE **01**
+
+      Use the following CSS properties to aid legibility:
+
+      - [line-height](https://www.w3schools.com/cssref/pr_dim_line-height.asp)
+      - [word-spacing](https://www.w3schools.com/cssref/pr_text_word-spacing.asp)
+      - [letter-spacing](https://www.w3schools.com/cssref/pr_text_letter-spacing.asp)
+		</section>
+    <section data-markdown class="crammed last-para-small">
+      ## TYPOGRAPHY CODE **02**
+
+      how how many `h1` tags can you have?
+
+      - one set of `h1` tags per **sectioning root** or content section  
+      - these are **sectioning root elements**:  
+      ```html
+      &lt;article&gt; &lt;section&gt; &lt;aside&gt; &lt;nav&gt;
+      ```
+      - `h1` labels the **whole document** between opening `body` and first **sectioning root**
+      - an `h1` heading in a **content section** should be the **first heading** in that section
+      - with `h1` top of a content section, **other headings** in that section should **descend in order**, starting with `h2` to create a **structured document outline**
+
+      condensed from [The Truth About Multiple h1 Tags in the HTML5 Era](https://webdesign.tutsplus.com/articles/the-truth-about-multiple-h1-tags-in-the-html5-era--webdesign-16824)
+		</section>
+    <section data-markdown class="crammed last-para-small">
+      ## TYPOGRAPHY CODE **03**
+
+      | Semantic Meaning | HTML Tag |
+      | --: | :-- | 
+      | [Headings](https://www.w3schools.com/tags/tag_hn.asp) |	`&lt;h1&gt;`, `&lt;h2&gt;` … `&lt;h6&gt;` |
+      | [Block quotation](https://www.w3schools.com/TAGS/tag_blockquote.asp) | `&lt;blockquote&gt;` |
+      | [Address](https://www.w3schools.com/tags/tag_address.asp) | `&lt;address&gt;` |
+      | [Abbreviation](https://www.w3schools.com/TAGS/tag_abbr.asp) (with `title` attribute) | `&lt;abbr&gt;` |
+      | [Defined term](https://www.w3schools.com/tags/tag_dfn.asp) | `&lt;dfn&gt;` |
+      | [Title of a work](https://www.w3schools.com/tags/tag_cite.asp) | `&lt;cite&gt;` |
+      | [Computer code](https://www.w3schools.com/TAGs/tag_code.asp) | `&lt;code&gt;` |
+      | [Emphasis](https://www.w3schools.com/tags/tag_em.asp) | `&lt;em&gt;` (not `&lt;i&gt;`) |
+      | [Strong emphasis](https://www.w3schools.com/tags/tag_strong.asp) | `&lt;strong&gt;` (not `&lt;b&gt;`) |
+
+      acronym, menu, dir are **not supported** in HTML5
+		</section>
+    <section data-markdown class="crammed smallcode">
+      ## TYPOGRAPHY CODE **04**
+
+      | **HTML LISTS** | **TAG** |
+      | --: | :-- | 
+      | [Unordered (bullet point) Lists](https://www.w3schools.com/TAGS/tag_ul.asp) |	`&lt;ul&gt;` |
+      | [Ordered (numbered) Lists](https://www.w3schools.com/TAGS/tag_ol.asp) |	`&lt;ol&gt;` |
+      | [Definition lists (title, description)](https://www.w3schools.com/TAGS/tag_dl.asp) | `&lt;dl&gt;` `&lt;dt&gt;` `&lt;dd&gt;` |
+
+      Definition lists are great for **title/description content**:
+
+      ```html
+      &lt;dl&gt;
+        &lt;dt&gt;Cat&lt;/dt&gt;
+          &lt;dd&gt;Fluff, claws, whiskers, meowing…&lt;/dd&gt;
+        &lt;dt&gt;Caterpillar&lt;/dt&gt;
+          &lt;dd&gt;First stage of a moth or butterfly&lt;/dd&gt;
+        &lt;dt&gt;Kittenpillar&lt;/dt&gt;
+          &lt;dd&gt;Only exists as joke baby caterpillar&lt;/dd&gt;
+      &lt;/dl&gt;
+      ```
+		</section>
+    <section data-markdown class="crammed">
+      ## TYPOGRAPHY CODE **05**
+
+      **only a few fonts** are on every computer (see [Typetester](http://classic.typetester.org/)).
+
+      A font on your computer may look fine in your browser **but** your website users **may not have that font**.
+
+      > “It **looks fine** on **my computer**”
+      >
+      > —*well-known moan* of novice web designers!
+
+      [Google fonts](https://fonts.google.com/) (and other services) allow you to **expand the range** of available **web typefaces** with the CSS property `@font-face`, but it’s best practice to use them **only for headings**, NOT body text as they can be **slow to load for users**
+		</section>
+    <section data-markdown class="crammed smallcode last-para-small">
+      ## TYPOGRAPHY CODE **06**
+
+      To use a specific font **local to your website** (and not depend on a Google fonts download), you also use `@font-face`
+
+      ```css
+      @font-face {
+        font-family: Chunkfive;
+        src: url('Chunkfive.otf');
+      }
+      /* a font stack: */
+      font-family: Chunkfive, Georgia, Palatino, Times, serif;
+      ```
+
+      This gives the custom font an **identifier** for the **rest of your CSS** and points to the **original font file** when this identifier is used in **other CSS style rules**
+
+      **Best format**: WOFF (OpenType or TrueType with compression and additional metadata) is the [most widely supported](https://www.w3schools.com/css/css3_fonts.asp) but OTF/TTF are also good.
+
+      - [Web Font Generator (FontSquirrel)](https://www.fontsquirrel.com/tools/webfont-generator)
+      - [css @font-face generator (careful: more options!)](https://transfonter.org/)
+		</section>
+    <section data-markdown>
+      ## TYPOGRAPHY CODE **07**
+
+      type in CSS can be **sized** in **different measures**, most commonly:
+
+      `em`, `%`, and `px` (ems, percentage and pixels).
+
+      ```css
+      font-size: 1.5em;
+      font-size: 150%;
+      font-size: 12px;
+      ```
+
+      `em`s are easiest to understand (`1em` is "normal" size so `.5em` is half and `2em` is twice normal size) but are adjusted according to their **parent element**.
       
-      ## A TUTORIAL
+      This can make confusing **size variations**, so…
+		</section>
+    <section data-markdown class="last-para-small">
+      ## TYPOGRAPHY CODE **08**
+
+      …the `rem` allows for *absolute* size adjustments in comparison to a **root em** `font-size`, typically an `em` size set on the `body` tag. It ignores anycontaining element `font-size`. For example:
+
+      ```css
+      body { font-size: 1em; } /* set the root em size */
+      h1 { font-size: 2rem; } /* twice the size */
+      small { font-size: .75rem; } /* 3/4 the size */
+      ```
+
+      <small>[Rems, ems, and pixels. What’s the difference? (Abbey Fitzgerald 2015)](https://getflywheel.com/layout/rems-ems-and-pixels-whats-the-difference/)</small>
+		</section>
+    <section data-markdown>
+      ## TYPOGRAPHY CODE **9**
+
+      The default font for **form fields** as displayed by browsers is usually **smaller** and in a **different font** than the body text,  but you can usually make them the same using `inherit`:
+
+      ```css
+      input, textarea {
+        font-size: inherit;
+        font-family: inherit;
+      }
+      ```
+
+      Or set the **font-size manually** (and if necessary the **font-family**)
+		</section>
+    <section data-markdown class="last-para-small">
+      ## TYPOGRAPHY CODE **10**
+
+      You can divide text [into columns](https://developer.mozilla.org/en-US/docs/Web/CSS/columns) using CSS:
+
+      ```css
+      .my-columns {
+        column-count: 3;
+      }
+      ```
+
+      there are a few settings: `column-gap`, `column-rule-style`, `column-rule-width`, `column-rule-color` or shorthand:
+
+      ```css
+      column-rule: 1px solid lightblue;
+      ```
+
+      [CSS Multiple Columns (W3Schools)](https://www.w3schools.com/Css/css3_multiple_columns.asp)
+		</section>
+    <section data-markdown>
+      ## TYPOGRAPHY CODE **11**
+
+      you can highlight the entire [::first-line](https://www.w3schools.com/cssref/sel_firstline.asp) of a block of text:
+
+      ```css
+      blockquote::first-line,
+      p::first-line {
+        font-size: 1.25rem;
+      }
+      ```
+		</section>
+    <section data-markdown class="last-para-small">
+      ## TYPOGRAPHY CODE **12**
+
+      … and use [::first-letter](https://www.w3schools.com/cssref/sel_firstletter.asp) to make a CSS `class` for **paragraphs** and **other elements** with **multiple lines of text**:
+
+      ```css
+      .drop-cap::first-letter {
+        font-size: 4.5rem;
+        float: left;
+        margin-top: .15em;
+      }
+      ```
+
+      [DEMO: drop capital letter (and CSS columns)](https://front-end-materials.github.io/typography/drop-cap/) ([code here](https://github.com/front-end-materials/typography/tree/master/drop-cap))
+		</section>
+    <section data-markdown>
+      ## TYPOGRAPHY CODE **13**
+
+      indent the **first line** of a text block with [text-indent](https://www.w3schools.com/cssref/pr_text_text-indent.asp)
+
+      ```html
+      &lt;p>The first paragraph…&gt;
+      &lt;p class="indent">A long following paragraph…&gt;
+      ```
+
+      ```css
+      .indentme {
+        indent: -2em;
+      }
+      ```
+		</section>
+    <section data-markdown>
+      ## TYPOGRAPHY CODE **14**
+
+      **hyphenate** large chunks of text with [hyphens: auto;](https://www.w3schools.com/cssref/css3_pr_hyphens.asp) (default is `manual`, which only breaks on the minus `-` character)
+
+      ```css
+      .hyphenated {
+        hyphens: auto;
+      }
+      ```
+		</section>
+    <section data-markdown>
+      ## TYPOGRAPHY CODE **15**
+
+      it's even possible to have vertical text: [writing-mode](https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_writing-mode)
+
+       although it may be better to **rotate** the **containing element**:
+
+      ```css
+      .rotate90 {
+        transform: rotate(90deg); /* note the `deg`! */
+      }
+      /* or -90deg for anti-clockwise*/
+      ```
+		</section>
+	</section>
+    
+	<section class="left-align">
+    <section data-markdown>
+      ## TYPOGRAPHY **RESOURCES**
+
+      Two resources:
+
+      - [Tips For Setting Up A Baseline Grid (CSS, article)](https://vanseodesign.com/web-design/baseline-grid/)
+      - [Typesetting Body Text (loooong video lecture)](https://vimeo.com/156203722)
+		</section>
+    <section data-markdown>
+      ## TYPOGRAPHY **DEMO**
+
+      [BONUS DEMO: show an image inside text](https://front-end-materials.github.io/typography/image-as-text/) ([code here](https://github.com/front-end-materials/typography/tree/master/image-as-text))
+		</section>
+	</section>
+
+<!--
+      ## WEB **TYPOGRAPHY**
+      
+      ## A TUTORIAL (REPLACE WITH TECH3015 L17?)
       
       This will show you how to **control and format type** on the web.
 
       You will start out with some [plain text (preview)](https://meds2007.github.io/web-typography-tutorial/), move through the tutorial to create [basically-formatted text](https://meds2007.github.io/web-typography-tutorial/index-working.html) and then see the code for the [fully-formatted text (preview)](https://meds2007.github.io/web-typography-tutorial/index-complete.html).
       
       [Download the typography tutorial files here](https://github.com/MEDS2007/web-typography-tutorial) (Green "Clone or download" button, choose "Download ZIP").
-		</section>
-	</section>
-
+-->
 
 	<section class="left-align">
   	<section data-markdown class="crammed">
-      # JAVASCRIPT **INTRO** 01
+      ## JAVASCRIPT **INTRO** 01
 
       - **1995:** JavaScript created by [Brendan Eich](https://brendaneich.com/) as Mocha/LiveScript
       - **1997:** ECMAScript standard established ([see ECMA](http://www.ecma-international.org/ "Standardization of Information and Communication Technology and Consumer Electronics: an international private (membership-based) non-profit standards organization for information and communication systems"))
@@ -271,9 +564,9 @@
   	</section>
     <!-- SHARED WITH CTEC39056 LECTURE 03 - UPDATE CTEC!!! -->
 		<section data-markdown class="crammed">
-      # JAVASCRIPT **INTRO** 02
+      ## JAVASCRIPT **INTRO** 02
 
-      ## How is JavaScript used?
+      ### How is JavaScript used?
 
       - form **validation** and **processing** of user input
       - handling **data** (e.g. JSON)
@@ -287,7 +580,7 @@
       Some of these use the JavaScript library [Three.js](https://threejs.org/)
 		</section>
 		<section data-markdown class="crammed">
-      # JAVASCRIPT **INTRO** 03
+      ## JAVASCRIPT **INTRO** 03
 
       ## THE BROWSER EVENT LOOP
 
@@ -308,14 +601,14 @@
 
   <section class="left-align">
 		<section data-markdown>
-      # JAVASCRIPT/THE DOM: **01**
+      ## JAVASCRIPT/THE DOM: **01**
 
       When you open any webpage in a browser, its **HTML** is **loaded** and **rendered visually** on the screen
 
-      To do this, the browser builds the **Document Object Model** (DOM) of that page, which is a **model of its logical structure**
+      To do this, the browser builds a **Document Object Model** (DOM) of the HTML tags for the page—a **model of its logical structure**
 		</section>
 		<section data-markdown class="crammed">
-      # JAVASCRIPT/THE DOM: **02**
+      ## JAVASCRIPT/THE DOM: **02**
 
       The **DOM** represents a document as a **tree structure** where HTML elements are **interrelated nodes** in the tree, and All nodes in the tree have **relationships** with each other:
 
@@ -324,7 +617,7 @@
       - nodes at the same level are **siblings**
 		</section>
 		<section data-markdown class="crammed">
-      # JAVASCRIPT/THE DOM: **03**
+      ## JAVASCRIPT/THE DOM: **03**
 
       The DOM can be represented as a **nested set of boxes**:
 
@@ -334,7 +627,7 @@
       to **add**, **delete** and **modify** elements.
 		</section>
 		<section data-markdown class="crammed">
-      # JAVASCRIPT/THE DOM: **04**
+      ## JAVASCRIPT/THE DOM: **04**
 
       For example, in the structure illustrated above:
 
@@ -348,7 +641,7 @@
       Understanding the **relationships between elements** in an HTML document enables us to **manipulate them** with **JavaScript**
 		</section>
 		<section data-markdown class="crammed">
-      # JAVASCRIPT/THE DOM: **05**
+      ## JAVASCRIPT/THE DOM: **05**
 
       There is a predefined `document` object in JavaScript, which can be used to **access all elements** in the **DOM**.
 
@@ -357,16 +650,16 @@
       So to access objects in an HTML page, you always start with the `document` object, e.g.:
 
       ```javascript
-      document.body.innerHTML = "Some text";
+      document.body.innerHTML = "&lt;h1&gt;A heading&lt;h1&gt;";
       ```
 
-      `body` is an element of the DOM so you access it using the `document` object, then you can change the content of its `innerHTML` property.
+      `body` is an element of the DOM—you access it using the `document` object, then you can change its `innerText or` `innerHTML` property.
 		</section>
   </section>
 
 	<section class="left-align">
 		<section data-markdown class="crammed smallcode">
-      # JAVASCRIPT DEMOS: **01**
+      ## JAVASCRIPT DEMOS: **01**
             
       The simplest possible example:
       
@@ -404,33 +697,35 @@
         clickThing.addEventListener("click", do_stuff);      
       </script>
   	</section>
-		<section>
+		<section class="last-para-small">
 			<h1>JAVASCRIPT DEMOS: <strong>03</strong></h1>
 
-      <p>You can get a reference to elements by `tag`, `id`, `class`</p>
+      <p>You can get a reference to elements by <code>tag</code>, <code>id</code>, <code>class</code></p>
 
 			<button id="myBtn" style="cursor: pointer; border-radius: 4px; background: #aaa;">What's the date?</button>
 
 			<p id="demo">I've no idea. Click the button.</p>
 
 			<script>
-      document.getElementById("myBtn").addEventListener("click", showDate);
       const dateDemo = document.getElementById("demo");
-
+      const myButton = document.getElementById("myBtn");
+      
 			function showDate() {
 				let d = new Date();
 				dateDemo.innerHTML = `Oh, it’s: ${d.toDateString()}!`;
 			}
+      
+      myButton.addEventListener("click", showDate);
 			</script>
 
 			<h4 style="margin-top: 4em">REFERENCES:</h4>
-			<p><small>
+			<p>
 				<a href="http://www.w3schools.com/js/js_htmldom_eventlistener.asp">W3Schools: JavaScript HTML DOM EventListener</a><br>
         <a href="http://www.w3schools.com/jsref/jsref_todatestring.asp">W3Schools: JavaScript toDateString() Method</a>
-			</small></p>
+			</p>
 		</section>
-		<section data-markdown>
-      # JAVASCRIPT DEMOS: **04**
+		<section data-markdown class="crammed smallcode">
+      ## JAVASCRIPT DEMOS: **04**
       
       Here’s the **code** that **showed the date**:
       
@@ -445,19 +740,21 @@
       **JavaScript:**
 
       ```javascript
-      document.getElementById("myBtn").addEventListener("click", showDate);
       const dateDemo = document.getElementById("demo");
+      const myButton = document.getElementById("myBtn");
       
       function showDate() {
         let d = new Date();
         dateDemo.innerHTML = `Oh, it’s: ${d.toDateString()}!`;
       }
+      
+      myButton.addEventListener("click", showDate);
       ```
 		</section>
 		<section>
 			<h1>JAVASCRIPT DEMOS: <strong>05</strong></h1>
 
-			<form id="getName" action="#" method="post">
+			<form id="getName" action="#">
 				<label for="userName">Enter name:</label>
 				<input id="userName" type="text" placeholder="name here please :-)" style="font-size: 1em">
 				<input type="submit" style="background: #ccc; color: #666; border-radius: 10%; font-size: 1em;">
@@ -480,12 +777,12 @@
       </script>
     </section>
 		<section data-markdown class="crammed smallcode">
-      # JAVASCRIPT DEMOS: **06**
+      ## JAVASCRIPT DEMOS: **06a**
       
-      here’s the **HTML** that grabbed the name and the **JavaScript** that displayed it:
+      here’s the **HTML** that gets the user’s name:
       
       ```html
-      &lt;form id="getName" action="#" method="post">
+      &lt;form id="getName" action="#">
         &lt;label for="userName">Enter name:&lt;/label>
         &lt;input id="userName" type="text" placeholder="name here please :-)">
         &lt;input type="submit">
@@ -494,39 +791,38 @@
       &lt;p>Hello, &lt;span id="myName">anonymous user! Your name?&lt;/span>&lt;/p>
       ```
       
+      Note the `id` attributes `getName` on the form and `myName` on the span tag…
+    </section>
+		<section data-markdown class="crammed smallcode">
+      ## JAVASCRIPT DEMOS: **06b**
+      
+      …now **JavaScript** can refer to those `id` attributes **directly**, without needing `document.getElementById()` (this **only works** for `id`s!)
+      
       ```javascript
       function PerformGreeting() {
+      // backticks `` allow us to insert the name dynamically with ${…}
         if(userName.value){
           myName.innerHTML = `&lt;strong>${userName.value}&lt;/strong>!`;
         } else {
           myName.innerHTML = `&lt;strong>person with no name&lt;/strong>!`;
         }
-        event.preventDefault(); // disables default form submission
+        // disables default page reload on pressing "submit"
+        event.preventDefault();
       }
 
       getName.addEventListener("submit", PerformGreeting);
       ```
 		</section>
-    <!-- UPDATE FROM CTEC3905 lecture 07!! -->
     <section>
       <style>
-        #question, #photo1, #photo2 {
-          text-decoration: underline;
-          cursor: pointer;
-        }
-        #question:hover, #photo1:hover, #photo2:hover {
-          text-decoration: none;
-          color: #ccc;
-        }
         #picture {
-          font-size: 75%;
           text-align: center;
           line-height: 178px;
           height: 178px;
           width: 300px;
           background-repeat: no-repeat;
           border: solid silver 4px;
-          transition: all 1s;
+          transition: all .5s;
         }
         #picture.car {
           border-color: green;
@@ -538,75 +834,65 @@
         }
       </style>
       
-      <h1>JAVASCRIPT DEMOS: <strong>07</strong></h1>
+      <h2>JAVASCRIPT DEMOS: <strong>07</strong></h2>
 
       <p>You can also <strong>manipulate CSS</strong> with JavaScript…<br>
-      e.g. to change a <strong>background image</strong>:</p>
+      e.g. to change a <strong>background image</strong>, like this:</p>
 
-      <p>Show me a photo of: <span id="photo1">a Tesla</span> or <span id="photo2">a kitten</span>!</p>
+      <p style="text-align: center;">See a: <a id="car">car</a> or <a id="cat">kitten</a>…</p>
 
-      <p id="picture" class="text">picture will appear</p>
+      <p id="picture" style="float: right;">kitten or car?</p>
         
       <script>
-        function showImage(whichPic) {
+        function showImage() {
           picture.innerHTML = "";
-          if (whichPic === "photo1") {
-            picture.classList.remove("cat");
-            picture.classList.add("car");
-          } else {
-            picture.classList.remove("car");
-            picture.classList.add("cat");
-          }
+          console.log(event.target.id);
+          picture.classList = event.target.id;
         }
-        photo1.addEventListener("click", function(){ showImage(this.id) });
-        photo2.addEventListener("click", showImage);
+
+        [car,cat].forEach(c => c.addEventListener( "click", showImage ));
       </script>
     </section>
     <section data-markdown class="smallcode">
-      # JAVASCRIPT DEMOS: **08**
+      ## JAVASCRIPT DEMOS: **08**
 
       Here’s the **HTML** and the **JavaScript:**
 
       ```html
-      &lt;p>Show me a photo of: &lt;span id="photo1">a Tesla&lt;/span> or &lt;span id="photo2">a kitten&lt;/span>!&lt;/p>
+      &lt;p>
+        See a: &lt;a id="car">car&lt;/a> or &lt;a id="cat">kitten&lt;/a>!
+      &lt;/p>
 
-      &lt;p id="picture" class="text">picture will appear&lt;/p>
+      &lt;p id="picture">kitten or car?&lt;/p>
       ```
 
       ```javascript
-      function showImage(whichPic) {
+      function showImage() {
         picture.innerHTML = "";
-        if (whichPic === "photo1") {
-          picture.classList.remove("cat");
-          picture.classList.add("car");
-        } else {
-          picture.classList.remove("car");
-          picture.classList.add("cat");
-        }
+        console.log(event.target.id); // see what's happening in the console!
+        picture.classList = event.target.id;
       }
-      
-      photo1.addEventListener("click", function(){ showImage(this.id) });
-      photo2.addEventListener("click", showImage);
+
+      [car,cat].forEach(c => c.addEventListener( "click", showImage ));
       ```
     </section>
     <section data-markdown class="smallcode">
-      # JAVASCRIPT DEMOS: **09**
+      ## JAVASCRIPT DEMOS: **09**
 
       …and the **CSS** for styling, and the fade transition:
         
       ```css
       #picture {
-        font-size: 75%;
         text-align: center;
         line-height: 178px;
         height: 178px;
         width: 300px;
         background-repeat: no-repeat;
-        border: solid green 4px;
-        transition: all 1s;
+        border: solid silver 4px;
+        transition: all .5s;
       }
       #picture.car {
-        border-color: silver;
+        border-color: green;
         background-image: url("images/tesla-model-s.jpg");
       }
       #picture.cat {
@@ -621,7 +907,7 @@
   <!-- SHARED WITH CTEC3905 - UPDATE CTEC USING THIS! -->
 	<section class="left-align">
     <section data-markdown class="crammed smallcode">
-      # JAVASCRIPT OBJECTS: **01**
+      ## JAVASCRIPT OBJECTS: **01**
 
       A [JavaScript object](http://www.w3schools.com/js/js_objects.asp) contains `name:value` pairs inside curly braces `{}`  
       (there’s **no comma** after the last item!).  
@@ -673,7 +959,7 @@
       </script>
     </section>
     <section data-markdown class="">
-      # JAVASCRIPT OBJECTS: **03**
+      ## JAVASCRIPT OBJECTS: **03**
 
       Here’s the **HTML**:
 
