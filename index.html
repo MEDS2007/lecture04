@@ -921,21 +921,20 @@
           normal: "360",
           ludicrous: "200"
         },
-        colour: "red",
-        start: function() {startMyCarStuffHere}
+        colour: "red"
       };
       
       car.range.ludicrous; // returns: 200
       ```
 
-      An **array of objects** is a common **JSON data format** used for exchanging data on the web e.g. from **APIs**
+      An **array of objects** is a common **JSON data format** used for exchanging data on the web e.g. reading data from from public **APIs**
 		</section>
     <section>
       <h1>JAVASCRIPT OBJECTS: <strong>02</strong></h1>
       
       <p>Now we have made a <code>car</code> object we can <strong>use it’s data</strong>:</p>
       
-      <p id="question">How far will the Tesla travel if you don’t drive like a maniac?</p>
+      <p><a id="question">How far will the Tesla go, driving normally?</a></p>
 
       <p id="answer"></p>
 
@@ -947,40 +946,49 @@
             normal: "360",
             ludicrous: "200"
           },
-          colour: "red",
-          start: function() {startMyCarStuffHere}
+          colour: "red"
         };
 
         let info = function() {
-          answer.innerHTML = `The <strong>${car.manufacturer} ${car.model}</strong> has a <strong>${car.range.normal} mile</strong> normal range.`;
+          answer.innerHTML = `
+            The <strong>${car.manufacturer} ${car.model}</strong>
+            has a <strong>${car.range.normal} mile</strong> normal range.
+          `;
         }
         
         question.addEventListener("click", info);
       </script>
     </section>
-    <section data-markdown class="">
+    <section data-markdown class="crammed smallcode">
       ## JAVASCRIPT OBJECTS: **03**
 
-      Here’s the **HTML**:
+      Here’s the **HTML** and the **JavaScript**:
 
       ```html
-      &lt;p id="question">How far will the Tesla travel if you don’t drive like a maniac?&lt;/p>
-
+      &lt;p>&lt;a id="question">How far will the Tesla go, driving normally?&lt;/a>&lt;/p>
       &lt;p id="answer">&lt;/p>
 
       ```
 
-      Here’s the **JavaScript**:
-
       ```javascript
-      // this gets details from the object
+      const car = {
+        manufacturer: "Tesla",
+        model: "Model S",
+        range: {
+          normal: "360", ludicrous: "200"
+        },
+        colour: "red",
+      };
+      // this gets details from the object:
       let info = function() {
-        answer.innerHTML = `The &lt;strong>${car.manufacturer} ${car.model}&lt;/strong> has a &lt;strong>${car.range} mile&lt;/strong> normal range.`;
+        answer.innerHTML = `
+          The &lt;strong>${car.manufacturer} ${car.model}&lt;/strong>
+          has a &lt;strong>${car.range.normal} mile&lt;/strong> normal range.
+        `;
       }
-
-      // this captures the click
+      // this captures the click:
       question.addEventListener("click", info);
-      ```
+    ```
     </section>
     <!-- END SHARED WITH CTEC3905 -->
   </section>
