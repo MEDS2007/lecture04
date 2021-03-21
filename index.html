@@ -484,8 +484,8 @@
       indent the **first line** of a text block with [text-indent](https://www.w3schools.com/cssref/pr_text_text-indent.asp)
 
       ```html
-      &lt;p>The first paragraph…&gt;
-      &lt;p class="indent">A long following paragraph…&gt;
+      &lt;p>The first paragraph…&lt;p&gt;
+      &lt;p class="indent">A long following paragraph…&lt;p&gt;
       ```
 
       ```css
@@ -505,18 +505,24 @@
       }
       ```
 		</section>
-    <section data-markdown>
+    <section data-markdown class="crammed">
       ## TYPOGRAPHY CODE **15**
 
-      it's even possible to have vertical text: [writing-mode](https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_writing-mode)
+      it's even possible to have vertical text: [writing-mode (demo)](https://www.w3schools.com/code/tryit.asp?filename=GOS1CKDCQJ2M)
 
-       although it may be better to **rotate** the **containing element**:
+      Which is easier than simply using `transform: rotate` alone. You could use this basi CSS on an element with the `.rotateMe` class for the slide-out menu tab linked above:
 
       ```css
-      .rotate90 {
-        transform: rotate(90deg); /* note the `deg`! */
+      .rotateMe {
+        writing-mode: vertical-lr;
+        background: teal;
+        color: white;
+        line-height: 2em;
+        transform: rotate(180deg);
+        /* border rules follow the rotate transform! */
+        border-top-left-radius: 7px;
+        border-bottom-left-radius: 7px;
       }
-      /* or -90deg for anti-clockwise*/
       ```
 		</section>
 	</section>
@@ -574,7 +580,7 @@
       - web-based **apps** (mobile and desktop)
       - web and mobile **frameworks**
       - **applications** built on web technologies
-      - **games** with HTML5 canvas ([HTML5 Games website](http://html5games.com/Best/702b9531-c136-437a-ab97-0b209d893b55))
+      - **games** with HTML5 canvas ([HTML5 Games website](https://www.creativebloq.com/html5/top-20-html5-games-1122788))
       - **[3D animations](https://tutorialzine.com/2013/09/20-impressive-examples-for-learning-webgl-with-three-js)** with canvas and WebGL e.g. [cars](http://carvisualizer.plus360degrees.com/threejs/), [Aquarium](http://webglsamples.org/aquarium/aquarium.html)
 
       Some of these use the JavaScript library [Three.js](https://threejs.org/)
@@ -996,7 +1002,7 @@
 	<section data-markdown>
 		# **FRONT-END** WEB TECHNOLOGIES
 
-		There are only **three**:
+		The **three** basic languages:
 
 		## **HTML** — **CSS** — **JavaScript**
 	</section>
