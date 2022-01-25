@@ -36,8 +36,6 @@
 
     **Simon Mills (module leader)**: smills@dmu.ac.uk
 
-    **Dave Everitt (lectures)**: deveritt@dmu.ac.uk
-
     [Lecture 4 slide index](https://github.com/MEDS2007/lecture04#meds2007)
 	</section>
 
@@ -72,7 +70,7 @@
 
 			**TRANSITION:** EXAMPLE 1
 
-			- transition goes in the **element‘s style** (the `div`)
+			- transition goes in the **element‘s style** (e.g. a `div`)
 			- things to change go in the element‘s `:hover` style
 
 			```css
@@ -95,7 +93,7 @@
 
 			**TRANSITION:** EXAMPLE 2
 
-			The **trigger** can be **something other** than :hover:
+			The **trigger** can be **something other** than `:hover`, for example:
 
 			```css
 			input[type=text] {
@@ -120,12 +118,12 @@
 			Changes CSS properties over a **given time** - three examples:
 
 			```css
-			transition: all 2s;
-			transition: color 2s 1s; /* add 1s delay */
+			transition: all 2s; /* takes 2 seconds */
+			transition: color 2s 1s; /* adds a 1 second delay */
 			transition: color, width 2s ease-in-out 1s;
 			```
 
-			- **property**: the CSS to transition (comma-separated, all)  
+			- **property**: the CSS to transition (comma-separated or `all`)  
 			- **duration**: transition length (secs/m'secs `s`|`ms`, `infinite`)  
 			- **timing-function**: (optional) ‘speed curve’ of the transition  
 			- **delay**: (optional) time before transition starts
@@ -145,14 +143,14 @@
 			Can be used alone (not animated) or on an **element** with  
       `transition` then `transform` on `:hover`/another action
 
-			The **values** of the `transform` property are:
+			The **values** of the `transform:` property are:
 								
 			`translate(540px,-200px);` x, y  
-			`rotate(360deg);`  
+			`rotate(360deg);` in degrees  
 			`scale(2, 0.5);` x, y  
 			`skew(10deg);` x axis  
-			`matrix(1, -0.3, 0, 1, 0, 0)`  
-			scaleX, skewY, skewX, scaleY, translateX, translateY
+			`matrix(1, -0.3, 0, 1, 0, 0);`  
+			(also `translateX`, `translateY`, `scaleX`, `scaleY`, `skewX`, `skewY`
 		</section>
 
 		<section data-markdown class="crammed">
