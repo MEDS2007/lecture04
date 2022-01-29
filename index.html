@@ -49,6 +49,8 @@
       - [A background to **JavaScript**](#/6)
       - [How **JavaScript works**](#/7)
       - [JavaScript **code**](#/8)
+      
+      **Warning**: this lecture has more info than will fit into an hour!
     </section>
   </section>
 
@@ -316,40 +318,43 @@
       - [word-spacing](https://www.w3schools.com/cssref/pr_text_word-spacing.asp)
       - [letter-spacing](https://www.w3schools.com/cssref/pr_text_letter-spacing.asp)
 
-      See the “Try it Yourself” links on W3Schools where you can experiment with any CSS property yourself
+      Use the [Try it Yourself](https://www.w3schools.com/cssref/tryit.asp?filename=trycss_letter-spacing "try out letter-spacing") links on W3Schools to experiment with CSS properties yourself
 		</section>
     <section data-markdown class="crammed last-para-small">
       ## TYPOGRAPHY CODE **02**
 
-      how how many `h1` tags can you have?
+      how how many `h1` (main heading) tags can you have?
 
-      - one set of `h1` tags per **sectioning root** or content section  
-      - these are **sectioning root elements**:  
-      ```html
-      &lt;article&gt; &lt;section&gt; &lt;aside&gt; &lt;nav&gt;
-      ```
-      - `h1` labels the **whole document** between opening `body` and first **sectioning root**
-      - an `h1` heading in a **content section** should be the **first heading** in that section
-      - with `h1` top of a content section, **other headings** in that section should **descend in order**, starting with `h2` to create a **structured document outline**
+      - technically, you can have one `h1` tag per **sectioning root** or content section…  
+      - …if those *sectioning root elements* (below) carry **self-contained content**:  
+      `&lt;article&gt; &lt;section&gt; &lt;aside&gt; &lt;nav&gt;`
 
-      condensed from [The Truth About Multiple h1 Tags in the HTML5 Era](https://webdesign.tutsplus.com/articles/the-truth-about-multiple-h1-tags-in-the-html5-era--webdesign-16824)
+      However, **in practice** (unless you’re a news site) it’s usually best to have:
+
+      - one `h1` to headline the **whole page** before/first inside the `&lt;main&gt;` tag
+      - `h2` headings in **content sections** that introduce **that section**
+      - **subheadings** inside sections should **descend in order**, starting with `h3`
+      
+      This creates a **semantically structured document outline**.
+
+      (Adapted from [The Truth About Multiple h1 Tags in the HTML5 Era](https://webdesign.tutsplus.com/articles/the-truth-about-multiple-h1-tags-in-the-html5-era--webdesign-16824))
 		</section>
     <section data-markdown class="crammed last-para-small">
       ## TYPOGRAPHY CODE **03**
 
-      | Semantic Meaning | HTML Tag |
+      These tags break up long chunks of text and/or provide **semantic meaning**:
+
+      | **Semantic Meaning** | **HTML Tag** |
       | --: | :-- | 
       | [Headings](https://www.w3schools.com/tags/tag_hn.asp) |	`&lt;h1&gt;`, `&lt;h2&gt;` … `&lt;h6&gt;` |
       | [Block quotation](https://www.w3schools.com/TAGS/tag_blockquote.asp) | `&lt;blockquote&gt;` |
-      | [Address](https://www.w3schools.com/tags/tag_address.asp) | `&lt;address&gt;` |
-      | [Abbreviation](https://www.w3schools.com/TAGS/tag_abbr.asp) (with `title` attribute) | `&lt;abbr&gt;` |
-      | [Defined term](https://www.w3schools.com/tags/tag_dfn.asp) | `&lt;dfn&gt;` |
-      | [Title of a work](https://www.w3schools.com/tags/tag_cite.asp) | `&lt;cite&gt;` |
-      | [Computer code](https://www.w3schools.com/TAGs/tag_code.asp) | `&lt;code&gt;` |
       | [Emphasis](https://www.w3schools.com/tags/tag_em.asp) | `&lt;em&gt;` (not `&lt;i&gt;`) |
       | [Strong emphasis](https://www.w3schools.com/tags/tag_strong.asp) | `&lt;strong&gt;` (not `&lt;b&gt;`) |
-
-      acronym, menu, dir are **not supported** in HTML5
+      | [Defined term](https://www.w3schools.com/tags/tag_dfn.asp) (+title attribute text) | `&lt;dfn title="…"&gt;` |
+      | [Abbreviation](https://www.w3schools.com/TAGS/tag_abbr.asp) (+title attribute text) | `&lt;abbr title="…"&gt;` |
+      | [Title of a work](https://www.w3schools.com/tags/tag_cite.asp) | `&lt;cite&gt;` |
+      | [Address](https://www.w3schools.com/tags/tag_address.asp) | `&lt;address&gt;` |
+      | [Computer code](https://www.w3schools.com/TAGs/tag_code.asp) | `&lt;code&gt;` |
 		</section>
     <section data-markdown class="crammed smallcode">
       ## TYPOGRAPHY CODE **04**
@@ -380,27 +385,27 @@
 
       A font on your computer may look fine in your browser **but** your website users **may not have that font**.
 
-      > “It **looks fine** on **my computer**”
-      >
-      > —*well-known moan* of novice web designers!
+      > “It **looks fine** on **my computer**” —*well-known moan* of novice web designers!
 
-      [Google fonts](https://fonts.google.com/) (and other services) allow you to **expand the range** of available **web typefaces** with the CSS property `@font-face`, but it’s best practice to use them **only for headings**, NOT body text as they can be **slow to load for users**
+      [Google fonts](https://fonts.google.com/) (or web fonts on you own site) allow you to **expand the range** of available **web typefaces** with the CSS property `@font-face`.
+      
+      Best practice is to use them **only for headings** as fonts can take **awhile to load** on **slow connections**, causing a sudden jump from the default font.
 		</section>
     <section data-markdown class="crammed smallcode last-para-small">
       ## TYPOGRAPHY CODE **06**
 
-      To use a specific font **local to your website** (and not depend on a Google fonts download), you also use `@font-face`
+      To use a specific font **local to your website** (and not depend on a Google fonts), you also use `@font-face`
 
       ```css
       @font-face {
-        font-family: Chunkfive;
-        src: url('Chunkfive.otf');
+        font-family: Chunkfive; /* name your font and… */
+        src: url('myfonts/Chunkfive.otf'); /* tell the browser where it is */
       }
-      /* a font stack: */
+      /* a "font stack" offers fall-backs in case the first one fails: */
       font-family: Chunkfive, Georgia, Palatino, Times, serif;
       ```
 
-      This gives the custom font an **identifier** for the **rest of your CSS** and points to the **original font file** when this identifier is used in **other CSS style rules**
+      The *name* gives the font an **identifier** for the **rest of your CSS** that points to the **original font file** when its name is used anywhere in your **CSS stylesheet**.
 
       **Best format**: WOFF (OpenType or TrueType with compression and additional metadata) is the [most widely supported](https://www.w3schools.com/css/css3_fonts.asp) but OTF/TTF are also good.
 
@@ -420,19 +425,21 @@
       font-size: 12px;
       ```
 
-      `em`s are easiest to understand (`1em` is "normal" size so `.5em` is half and `2em` is twice normal size) but are adjusted according to their **parent element**.
+      `em`s are easiest to understand—`1em` is "normal" size, so `.5em` is half and `2em` is twice normal size
       
-      This can make confusing **size variations**, so…
+      `em`s are adjusted according to their **parent element**, and this can produce **confusing size variations**, so…
 		</section>
     <section data-markdown class="last-para-small">
       ## TYPOGRAPHY CODE **08**
 
-      …the `rem` allows for *absolute* size adjustments in comparison to a **root em** `font-size`, typically an `em` size set on the `body` tag. It ignores any containing element `font-size`. For example:
+      …the `rem` allows for **absolute size adjustments** from a **root em** `font-size`, typically a base `em` size set on the `body` tag.
+      
+      `rem` sizes ignore the `font-size` styles for any containing element, and are always based on the **root** `font-size`:
 
       ```css
-      body { font-size: 1em; } /* set the root em size */
-      h1 { font-size: 2rem; } /* twice the size */
-      small { font-size: .75rem; } /* 3/4 the size */
+      body { font-size: 1em; } /* set the root size in ems */
+      h1 { font-size: 2rem; } /* always twice root size */
+      small { font-size: .75rem; } /* always 3/4 root size */
       ```
 
       <small>[Rems, ems, and pixels. What’s the difference? (Abbey Fitzgerald 2015)](https://getflywheel.com/layout/rems-ems-and-pixels-whats-the-difference/)</small>
@@ -440,7 +447,9 @@
     <section data-markdown>
       ## TYPOGRAPHY CODE **9**
 
-      The default font for **form fields** as displayed by browsers is usually **smaller** and in a **different font** than the body text,  but you can usually make them the same using `inherit`:
+      **Form fields are different**
+
+      The default font for **form fields** in browsers is usually **smaller** and in a **different font** than the body text,  but you can usually make these default fonts the same using `inherit`:
 
       ```css
       input, textarea {
@@ -454,7 +463,7 @@
     <section data-markdown class="last-para-small">
       ## TYPOGRAPHY CODE **10**
 
-      You can divide text [into columns](https://developer.mozilla.org/en-US/docs/Web/CSS/columns) using CSS:
+      You can divide text [into columns](https://www.w3schools.com/Css/css3_multiple_columns.asp) using CSS:
 
       ```css
       .my-columns {
@@ -462,13 +471,14 @@
       }
       ```
 
-      there are a few settings: `column-gap`, `column-rule-style`, `column-rule-width`, `column-rule-color` or shorthand:
+      there are a few settings:  
+      `column-gap`, `column-rule-style`, `column-rule-width`, `column-rule-color`, or use the shorthand:
 
       ```css
       column-rule: 1px solid lightblue;
       ```
 
-      [CSS Multiple Columns (W3Schools)](https://www.w3schools.com/Css/css3_multiple_columns.asp)
+      Add the above style to the CSS in the [try it yourself](https://www.w3schools.com/Css/tryit.asp?filename=trycss3_column-count) section.
 		</section>
     <section data-markdown>
       ## TYPOGRAPHY CODE **11**
@@ -476,11 +486,13 @@
       you can highlight the entire [::first-line](https://www.w3schools.com/cssref/sel_firstline.asp) of a block of text:
 
       ```css
-      blockquote::first-line,
-      p::first-line {
+      blockquote::first-line, /* apply this style to */
+      p::first-line { /* blockquotes and paragraphs */
         font-size: 1.25rem;
       }
       ```
+
+      The above makes the first line of text in all **blockquotes** and **paragraphs** .25 larger
 		</section>
     <section data-markdown class="last-para-small">
       ## TYPOGRAPHY CODE **12**
@@ -502,16 +514,20 @@
 
       indent the **first line** of a text block with [text-indent](https://www.w3schools.com/cssref/pr_text_text-indent.asp)
 
+      HTML:
       ```html
-      &lt;p>The first paragraph…&lt;p&gt;
-      &lt;p class="indentme">A long following paragraph…&lt;p&gt;
+      &lt;p>The first paragraph with no indent…&lt;p&gt;
+      &lt;p class="indentme">indented first line here…&lt;p&gt;
       ```
 
+      CSS:
       ```css
       .indentme {
-        indent: -2em;
+        indent: 2em;
       }
       ```
+
+      Minus values (e.g. `-2em`) **outdent** the line
 		</section>
     <section data-markdown>
       ## TYPOGRAPHY CODE **14**
@@ -529,7 +545,9 @@
 
       it's even possible to have vertical text: [writing-mode (demo)](https://www.w3schools.com/code/tryit.asp?filename=GOS47RNEMLFH)
 
-      Which is easier than simply using `transform: rotate` alone. You could use this basi CSS on an element with the `.rotateMe` class for the slide-out menu tab linked above:
+      This is easier than simply using `transform: rotate` alone.
+      
+      You could use basic CSS below on an element with the `.rotateMe` class for the slide-out menu tab linked in the demo above:
 
       ```css
       .rotateMe {
@@ -550,15 +568,15 @@
     <section data-markdown>
       ## TYPOGRAPHY **RESOURCES**
 
-      Two resources:
+      Two detailed further resources:
 
       - [Tips For Setting Up A Baseline Grid (CSS, article)](https://vanseodesign.com/web-design/baseline-grid/)
-      - [Typesetting Body Text (loooong video lecture)](https://vimeo.com/156203722)
+      - [Typesetting Body Text (loooong but good video lecture)](https://vimeo.com/156203722)
 		</section>
     <section data-markdown>
       ## TYPOGRAPHY **DEMO**
 
-      [BONUS DEMO: show an image inside text](https://front-end-materials.github.io/typography/image-as-text/) ([code here](https://github.com/front-end-materials/typography/tree/master/image-as-text))
+      BONUS DEMO: [show an image inside text](https://front-end-materials.github.io/typography/image-as-text/) ([code here](https://github.com/front-end-materials/typography/tree/master/image-as-text))
 		</section>
 	</section>
 
@@ -574,9 +592,12 @@
       [Download the typography tutorial files here](https://github.com/MEDS2007/web-typography-tutorial) (Green "Clone or download" button, choose "Download ZIP").
 -->
 
+<!-- JAVASCRIPT SHOULD BE A SEPARATE LECTURE (MEDS2007 5) -->
 	<section class="left-align">
   	<section data-markdown class="crammed">
       ## JAVASCRIPT **INTRO** 01
+
+      This could be a separate optional advanced section (or lecture!)
 
       - **1995:** JavaScript created by [Brendan Eich](https://brendaneich.com/) as Mocha/LiveScript
       - **1997:** ECMAScript standard established ([see ECMA](http://www.ecma-international.org/ "Standardization of Information and Communication Technology and Consumer Electronics: an international private (membership-based) non-profit standards organization for information and communication systems"))
@@ -700,11 +721,11 @@
       // store a reference to the element to be clicked:
       const clickThing = document.getElementById("my-id");
       
-      // what to do when the user clicks:
+      // make a function that says what to do when the user clicks:
       function do_stuff() {
         alert("You clicked me!");
       }
-      // or you can use the simpler "fat arrow" syntax:
+      // OR use the simpler but more cryptic "fat arrow" function syntax:
       const do_stuff = () => { alert("You clicked me!"); }
       
       // "listen" for the click:
@@ -771,6 +792,7 @@
       function showDate() {
         let d = new Date();
         dateDemo.innerHTML = `Oh, it’s: ${d.toDateString()}!`;
+        // backticks `` allow us to insert the date dynamically with ${…}
       }
       
       myButton.addEventListener("click", showDate);
@@ -825,7 +847,7 @@
       
       ```javascript
       function PerformGreeting() {
-      // backticks `` allow us to insert the name dynamically with ${…}
+        // backticks `` allow us to insert the name dynamically with ${…}
         if(userName.value){
           myName.innerHTML = `&lt;strong>${userName.value}&lt;/strong>!`;
         } else {
@@ -864,9 +886,9 @@
       <p>You can also <strong>manipulate CSS</strong> with JavaScript…<br>
       e.g. to change a <strong>background image</strong>, like this:</p>
 
-      <p style="text-align: center;">See a: <a id="car">car</a> or <a id="cat">kitten</a>…</p>
+      <p>Choose a: <a id="car">car</a> or a <a id="cat">kitten</a>…</p>
 
-      <p id="picture" style="float: right;">kitten or car?</p>
+      <p id="picture">kitten or car?</p>
         
       <script>
         function showImage() {
