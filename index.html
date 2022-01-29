@@ -68,20 +68,20 @@
 		<section data-markdown class="crammed smalltext">
 			## CSS ANIMATION: **2**
 
-			**TRANSITION:** EXAMPLE 1
+			**TRANSITION EXAMPLE 1**: change **colour** and **width** on `:hover`
 
-			- transition goes in the **element‘s style** (e.g. a `div`)
-			- things to change go in the element‘s `:hover` style
+			- the **transition rules** go in the element’s *style* (e.g. a `div`)
+			- things **to change** go in the element’s *`:hover` style*
 
 			```css
 			div {
-					width: 100px;
-					background: red;
-					transition: all 2s;
+				width: 100px;
+				background: red;
+				transition: all 2s;
 			}
 			div:hover {
-					width: 400px;
-					background: blue;
+				width: 400px;
+				background: blue;
 			}
 			```
 
@@ -91,23 +91,25 @@
 		<section data-markdown class="crammed">
 			## CSS ANIMATION: **3**
 
-			**TRANSITION:** EXAMPLE 2
+			**TRANSITION EXAMPLE 2**: **highlight an input field** on `:focus`
 
-			The **trigger** can be **something other** than `:hover`, for example:
+			(hover is not the only **trigger**)
 
 			```css
 			input[type=text] {
-				width: 100px;
+				background: #eee; /* pale grey */
+				border-color: black;
 				transition: all .35s ease-in-out;
 			}
 			input[type=text]:focus {
-				width: 250px;
+				background: white;
+				border-color: green;
 				border: 2px solid #0f0;
 			}
 			```
 
 			[Early article on `transition`, Dan Cederholm, 2010](http://alistapart.com/article/understanding-css3-transitions)  
-      (`-webkit-` is no longer needed so you can always delete lines that start with it)
+      (**delete lines** that start with `-webkit-` as it’s no longer needed)
 		</section>
 
 		<section data-markdown class="crammed">
@@ -119,16 +121,18 @@
 
 			```css
 			transition: all 2s; /* takes 2 seconds */
-			transition: color 2s 1s; /* adds a 1 second delay */
-			transition: color, width 2s ease-in-out 1s;
+			transition: all 2s 1s; /* add a 1 second delay */
+			transition: color, width 2s ease-in-out 1s; /* specific */
 			```
 
-			- **property**: the CSS to transition (comma-separated or `all`)  
-			- **duration**: transition length (secs/m'secs `s`|`ms`, `infinite`)  
-			- **timing-function**: (optional) ‘speed curve’ of the transition  
-			- **delay**: (optional) time before transition starts
+			The **third example** above uses code for the:
 
-			[timing-function easing examples and demo](http://easings.net/) 
+			- **property**: (comma-separated or `all`) is the CSS to transition  
+			- **duration**: the transition length (secs/millisecs `s`|`ms`)  
+			- **timing-function**: (optional) ‘speed curve’ of the transition  
+			- **delay**: (optional) delay before the transition starts
+
+			[timing-function easing examples (hover over, click for code)](http://easings.net/) 
 		</section>
 
 		<section data-markdown class="crammed">
@@ -137,20 +141,22 @@
 			**TRANSFORM**
 			
 			```css
-			transform: rotate(70deg);
+			transform: rotate(90deg); /* sideways, can be minus */
 			```
 			
-			Can be used alone (not animated) or on an **element** with  
-      `transition` then `transform` on `:hover`/another action
+			To animate, use `transition` on an **element**  
+      then `transform` on `:hover` or another user action.
 
-			The **values** of the `transform:` property are:
+			**Other values** of the `transform:` property are:
 								
 			`translate(540px,-200px);` x, y  
-			`rotate(360deg);` in degrees  
 			`scale(2, 0.5);` x, y  
-			`skew(10deg);` x axis  
+			`skew(10deg, 20deg);` x, y  
+
+			or **all three together**:
+
 			`matrix(1, -0.3, 0, 1, 0, 0);`  
-			(also `translateX`, `translateY`, `scaleX`, `scaleY`, `skewX`, `skewY`
+			(scaleX, skewY, skewX, scaleY, translateX, translateY)
 		</section>
 
 		<section data-markdown class="crammed">
@@ -172,15 +178,14 @@
 			The [CSS `animation` property](http://www.w3schools.com/cssref/css3_pr_animation.asp) binds a named `animation` to an element identified by its `selector` e.g.
 
 			```css
-			.see-this {
+			.animate-me { /* classname of the element to animate */
 			  animation: change-stuff 5s infinite;
 			}
+			/* animation name, duration, how many times to run 
+			   seconds/milliseconds, or infinite to run forever */
 			```
 
-			(animation name, duration, how many times to run)  
-			`infinite` runs forever, seconds/milliseconds limit time
-
-			The changes are user-defined in a separate  
+			The CSS **changes** are defined in a separate  
 			`@keyframes` code block…
 		</section>
 
@@ -190,7 +195,7 @@
 			**ANIMATION** KEYFRAMES
 
 			```css
-			@keyframes change-stuff {
+			@keyframes change-stuff { /* animation name */
 				25% {
 					styles for 1/4 way through;
 				}
@@ -209,34 +214,42 @@
 		<section data-markdown>
 			## CSS ANIMATION: **9**
 
-			**ANIMATION** WHAT IS (NOT) ANIMATABLE?
-
-			**not** `display: none` or `display: block`,  
-      **not** the property value `auto` (e.g. for height) etc.
-
-			[Animatable CSS properties (W3Schools)](http://www.w3schools.com/CSSref/css_animatable.asp)  
+			**ANIMATION** WHAT IS/NOT ANIMATABLE?
 			
-			can be triggered by focus/hover/etc.… e.g.:  
-			`:focus :blur :hover :active input[type=checkbox]:checked`…
+			**yes** `:hover :focus :blur` and complex selectors e.g.  
+      **yes** `input[type=checkbox]:checked` and **more**\*
+      
+			**not** `display: none` or `display: block`,  
+			**not** the property value `auto` (e.g. for height) etc.
+			**not click**—that needs JavaScript! Although…  
+			
+			**yes** `:target` can *fake a click*, example to follow…
+      
+			\*see all [Animatable CSS properties (W3Schools)](http://www.w3schools.com/CSSref/css_animatable.asp)  
 		</section>
 
 		<section data-markdown class="crammed">
       ## CSS ANIMATION: **10**
-
-      <!-- **EXAMPLE CODE**:-->
         
       <!-- FIX THIS FIRST -->
       <!-- - A [simple CSS-only slideshow](https://github.com/DaveEveritt/pure-css-image-slideshow) ([see demo](https://daveeveritt.github.io/pure-css-image-slideshow/)) -->
 
-      - A [CSS-only responsive lightbox](https://github.com/DaveEveritt/css-lightbox) ([see demo](https://daveeveritt.github.io/css-lightbox/))
+      **Animation examples**:
 
-      **ADVANCED ONLINE EXAMPLES**:
+      - a CSS-only responsive lightbox ([demo](https://daveeveritt.github.io/css-lightbox/), [code](https://github.com/DaveEveritt/css-lightbox))  
+      using `transition` and `:target` (to fake a ‘click’)
+
+      **advanced examples**:
 
       - [animated movie posters](http://demo.marcofolio.net/3d_animation_css3/)
       - [Original Hover Effects](http://tympanus.net/Tutorials/OriginalHoverEffects/)
-      - [Chessboard vacuum (Ana Tudor)](http://codepen.io/thebabydino/pen/FpAun?editors=0100)
+
+      **…and really creative CSS animations:**
+
       - [Bending effect - page flip (Fabrizio Bianchi)](http://codepen.io/fbrz/pen/whxbF)
-      - [Rotating colour box (CodePen)](http://codepen.io/yoksel/pen/nxgrp)
+      - [Chessboard vacuum (Ana Tudor)](http://codepen.io/thebabydino/pen/FpAun?editors=0100)
+      - [Rotating colour box
+       (CodePen)](http://codepen.io/yoksel/pen/nxgrp)
 		</section>
 	</section>
 
@@ -285,19 +298,22 @@
       …and the advice continues **in more detail** for **mobile devices** in [How To Set Perfect Line Lengths For The Web](http://www.simon-li.com/design-and-code/how-to-set-perfect-line-lengths-for-your-webpages/)
 
       …and finally [Letterspacing Makes ALL CAPS Easier to Read](https://uxmovement.com/content/how-letterspacing-can-make-all-caps-easier-to-read/)
-<!-- END CTEC SHARE -->
 		</section>
+    <!-- END CTEC SHARE -->
 	</section>
     
 	<section class="left-align">
     <section data-markdown>
       ## TYPOGRAPHY CODE **01**
 
-      Use the following CSS properties to aid legibility:
+      Use the following CSS properties to aid legibility  
+      (links to a page on the W3Schools website about each property):
 
       - [line-height](https://www.w3schools.com/cssref/pr_dim_line-height.asp)
       - [word-spacing](https://www.w3schools.com/cssref/pr_text_word-spacing.asp)
       - [letter-spacing](https://www.w3schools.com/cssref/pr_text_letter-spacing.asp)
+
+      See the “Try it Yourself” links on W3Schools where you can experiment with any CSS property yourself
 		</section>
     <section data-markdown class="crammed last-para-small">
       ## TYPOGRAPHY CODE **02**
