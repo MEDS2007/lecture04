@@ -36,3 +36,9 @@
 - [Front-end languages: HTML, CSS JavaScript](https://meds2007.github.io/lecture04/#/10)
 
 Slides created in Markdown (plus HTML5, JavaScript and CSS) using [reveal.js](https://revealjs.com/).
+
+---
+
+## TO DO
+
+- [ ] sort and re-order JavaScript section to flow better
