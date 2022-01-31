@@ -3,12 +3,12 @@
 ## Lecture 4 [see slides](https://meds2007.github.io/lecture04/)
 
 - [The slide index …](https://meds2007.github.io/lecture04/#/1)
-- [CSS Animation …](https://meds2007.github.io/lecture04/#/2)
+- [**CSS Animation** …](https://meds2007.github.io/lecture04/#/2)
   - [CSS Animation (2-4): transitions …](https://meds2007.github.io/lecture04/#/2/1)
   - [CSS Animation (5-6): transform …](https://meds2007.github.io/lecture04/#/2/4)
   - [CSS Animation (7-9): animation …](https://meds2007.github.io/lecture04/#/2/6)
   - [CSS Animation: animation examples and references](https://meds2007.github.io/lecture04/#/2/9)
-- [Web Typography introduction …](https://meds2007.github.io/lecture04/#/3)
+- [**Web Typography** introduction …](https://meds2007.github.io/lecture04/#/3)
   - [Web Typography (2-3): quotations …](https://meds2007.github.io/lecture04/#/3/1)
   - [Web Typography: design classics](https://meds2007.github.io/lecture04/#/3/3)
 - [Web Typography code: legibility …](https://meds2007.github.io/lecture04/#/4)
@@ -25,7 +25,7 @@
   - [Web Typography code: vertical text](https://meds2007.github.io/lecture04/#/4/15)
 - [Web Typography code: resources](https://meds2007.github.io/lecture04/#/5)
   - [Web Typography code: demo](https://meds2007.github.io/lecture04/#/5/1)
-- [JavaScript intro: history …](https://meds2007.github.io/lecture04/#/6)
+- [**JavaScript** intro: history …](https://meds2007.github.io/lecture04/#/6)
   - [JavaScript intro: how is JavaScript used?](https://meds2007.github.io/lecture04/#/6/1)
   - [JavaScript intro: the browser event loop](https://meds2007.github.io/lecture04/#/6/2)
 - [JavaScript & the DOM …](https://meds2007.github.io/lecture04/#/7)
@@ -37,7 +37,7 @@
   - [JavaScript demos (5-7): input name](https://meds2007.github.io/lecture04/#/8/4)
   - [JavaScript demos (8-10): image swap …](https://meds2007.github.io/lecture04/#/8/7)
 - [JavaScript objects (1-3): using JavaScript object data …](https://meds2007.github.io/lecture04/#/9)
-- [Front-end languages: HTML, CSS JavaScript](https://meds2007.github.io/lecture04/#/10)
+- [**Front-end languages**: HTML, CSS JavaScript](https://meds2007.github.io/lecture04/#/10)
 
 Slides created in Markdown (plus HTML5, JavaScript and CSS) using [reveal.js](https://revealjs.com/).
 
@@ -45,7 +45,7 @@ Slides created in Markdown (plus HTML5, JavaScript and CSS) using [reveal.js](ht
 
 ## TO DO
 
-- [ ] discuss how to separate the JavaScript secion?
+- [ ] discuss whether to separate the JavaScript secion?
 
 ## DONE
 
