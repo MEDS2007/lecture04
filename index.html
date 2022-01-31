@@ -296,37 +296,39 @@
 
       - [Web Style Guide](https://webstyleguide.com/9-typography.html), Patrick J. Lynch and Sarah Horton
 		</section>
-    <section data-markdown>
-      ## WEB TYPOGRAPHY **05**
-
-      optimum **line length for readablity** was supposed to be 50-75 characters…
-
-      …but [The Line Length Misconception](https://www.viget.com/articles/the-line-length-misconception/) draws on more recent research, although `line-spacing`, `letter-spacing` and `font-family` helps—see [Optimal Text Layout Line Length](https://www.paulolyslager.com/optimal-text-layout-line-length/)
-
-      …and the advice continues **in more detail** for **mobile devices** in [How To Set Perfect Line Lengths For The Web](http://www.simon-li.com/design-and-code/how-to-set-perfect-line-lengths-for-your-webpages/)
-
-      …and finally [Letterspacing Makes ALL CAPS Easier to Read](https://uxmovement.com/content/how-letterspacing-can-make-all-caps-easier-to-read/)
-		</section>
-    <!-- END CTEC SHARE -->
+    <!-- END CTEC SHARE - UPDATE CTEC TO REMOVE LINE-LENGTH, MOVED BELOW -->
 	</section>
     
 	<section class="left-align">
     <section data-markdown>
       ## TYPOGRAPHY CODE **01**
 
-      Use the following CSS properties to aid legibility  
+      Use the following CSS properties to **aid legibility** (readability)  
       (links to a page on the W3Schools website about each property):
 
       - [line-height](https://www.w3schools.com/cssref/pr_dim_line-height.asp)
-      - [word-spacing](https://www.w3schools.com/cssref/pr_text_word-spacing.asp)
       - [letter-spacing](https://www.w3schools.com/cssref/pr_text_letter-spacing.asp)
+      - [word-spacing](https://www.w3schools.com/cssref/pr_text_word-spacing.asp)
 
       Use the [Try it Yourself](https://www.w3schools.com/cssref/tryit.asp?filename=trycss_letter-spacing "try out letter-spacing") links on W3Schools to experiment with CSS properties yourself.
 		</section>
-    <section data-markdown class="crammed last-para-small">
+    <section data-markdown>
       ## TYPOGRAPHY CODE **02**
 
-      how how many `h1` (main heading) tags can you have?
+      **line length** for optimum **legibility** was reckoned to be around 50-75 characters…
+
+      …but [The Line Length Misconception](https://www.viget.com/articles/the-line-length-misconception/) draws on more recent research, and CSS `line-height`, `letter-spacing` and `font-family` help—see [Optimal Text Layout Line Length](https://www.paulolyslager.com/optimal-text-layout-line-length/)
+
+      For more **detailed research on mobile devices** see:  
+      [How To Set Perfect Line Lengths For The Web](http://www.simon-li.com/design-and-code/how-to-set-perfect-line-lengths-for-your-webpages/)
+
+      Mostly for headings:  
+      [Letterspacing Makes ALL CAPS Easier to Read](https://uxmovement.com/content/how-letterspacing-can-make-all-caps-easier-to-read/)
+		</section>
+    <section data-markdown class="crammed last-para-small">
+      ## TYPOGRAPHY CODE **03**
+
+      **Main page headings**: how many `h1` tags can you have?
 
       - technically, you can have one `h1` tag per **sectioning root** or content section…  
       - …if those *sectioning root elements* (below) carry **self-contained content**:  
@@ -343,7 +345,7 @@
       (Adapted from [The Truth About Multiple h1 Tags in the HTML5 Era](https://webdesign.tutsplus.com/articles/the-truth-about-multiple-h1-tags-in-the-html5-era--webdesign-16824))
 		</section>
     <section data-markdown class="crammed last-para-small">
-      ## TYPOGRAPHY CODE **03**
+      ## TYPOGRAPHY CODE **04**
 
       These tags break up long chunks of text and/or provide **semantic meaning**:
 
@@ -360,7 +362,7 @@
       | [Computer code](https://www.w3schools.com/TAGs/tag_code.asp) | `&lt;code&gt;` |
 		</section>
     <section data-markdown class="crammed smallcode">
-      ## TYPOGRAPHY CODE **04**
+      ## TYPOGRAPHY CODE **05**
 
       | **HTML LISTS** | **TAG** |
       | --: | :-- | 
@@ -382,7 +384,7 @@
       ```
 		</section>
     <section data-markdown class="crammed">
-      ## TYPOGRAPHY CODE **05**
+      ## TYPOGRAPHY CODE **06**
 
       **only a few fonts** are on every computer (see [Typetester](http://classic.typetester.org/)).
 
@@ -395,7 +397,7 @@
       Best practice is to use them **only for headings** as fonts can take **awhile to load** on **slow connections**, causing a sudden jump from the default font.
 		</section>
     <section data-markdown class="crammed smallcode last-para-small">
-      ## TYPOGRAPHY CODE **06**
+      ## TYPOGRAPHY CODE **07**
 
       To use a specific font **local to your website** (and not depend on a Google fonts), you also use `@font-face`
 
@@ -416,7 +418,7 @@
       - [css @font-face generator (careful: more options!)](https://transfonter.org/)
 		</section>
     <section data-markdown>
-      ## TYPOGRAPHY CODE **07**
+      ## TYPOGRAPHY CODE **08**
 
       type in CSS can be **sized** in **different measures**, most commonly:
 
@@ -433,7 +435,7 @@
       `em`s are adjusted according to their **parent element**, and this can produce **confusing size variations**, so…
 		</section>
     <section data-markdown class="last-para-small">
-      ## TYPOGRAPHY CODE **08**
+      ## TYPOGRAPHY CODE **09**
 
       …the `rem` allows for **absolute size adjustments** from a **root em** `font-size`, typically a base `em` size set on the `body` tag.
       
@@ -448,7 +450,7 @@
       <small>[Rems, ems, and pixels. What’s the difference? (Abbey Fitzgerald 2015)](https://getflywheel.com/layout/rems-ems-and-pixels-whats-the-difference/)</small>
 		</section>
     <section data-markdown>
-      ## TYPOGRAPHY CODE **9**
+      ## TYPOGRAPHY CODE **10**
 
       **Form fields are different**
 
@@ -464,7 +466,7 @@
       Or set the **font-size manually** (and if necessary the **font-family**)
 		</section>
     <section data-markdown class="last-para-small">
-      ## TYPOGRAPHY CODE **10**
+      ## TYPOGRAPHY CODE **11**
 
       You can divide text [into columns](https://www.w3schools.com/Css/css3_multiple_columns.asp) using CSS:
 
@@ -484,7 +486,7 @@
       Add the above style to the CSS in the [try it yourself](https://www.w3schools.com/Css/tryit.asp?filename=trycss3_column-count) section.
 		</section>
     <section data-markdown>
-      ## TYPOGRAPHY CODE **11**
+      ## TYPOGRAPHY CODE **12**
 
       you can highlight the entire [::first-line](https://www.w3schools.com/cssref/sel_firstline.asp) of a block of text:
 
@@ -498,7 +500,7 @@
       The above makes the first line of text in all **blockquotes** and **paragraphs** .25 larger
 		</section>
     <section data-markdown class="last-para-small">
-      ## TYPOGRAPHY CODE **12**
+      ## TYPOGRAPHY CODE **13**
 
       … and use [::first-letter](https://www.w3schools.com/cssref/sel_firstletter.asp) to make a CSS `class` for **paragraphs** and **other elements** with **multiple lines of text**:
 
@@ -513,7 +515,7 @@
       [DEMO: drop capital letter (and CSS columns)](https://front-end-materials.github.io/typography/drop-cap/) ([code here](https://github.com/front-end-materials/typography/tree/master/drop-cap))
 		</section>
     <section data-markdown>
-      ## TYPOGRAPHY CODE **13**
+      ## TYPOGRAPHY CODE **14**
 
       indent the **first line** of a text block with [text-indent](https://www.w3schools.com/cssref/pr_text_text-indent.asp)
 
@@ -533,7 +535,7 @@
       Minus values (e.g. `-2em`) **outdent** the line
 		</section>
     <section data-markdown>
-      ## TYPOGRAPHY CODE **14**
+      ## TYPOGRAPHY CODE **15**
 
       **hyphenate** large chunks of text with [hyphens: auto;](https://www.w3schools.com/cssref/css3_pr_hyphens.asp) (default is `manual`, which only breaks on the minus `-` character)
 
@@ -544,7 +546,7 @@
       ```
 		</section>
     <section data-markdown class="crammed">
-      ## TYPOGRAPHY CODE **15**
+      ## TYPOGRAPHY CODE **16**
 
       it's even possible to have vertical text: [writing-mode (demo)](https://www.w3schools.com/code/tryit.asp?filename=GOS47RNEMLFH)
 
@@ -703,6 +705,27 @@
       ```
 
       `body` is an element of the DOM—you access it using the `document` object, then you can change its `innerText or` `innerHTML` property.
+		</section>
+		<section data-markdown class="crammed">
+      ## JAVASCRIPT/THE DOM: **06**
+
+      Browsers need to **load the DOM** before JavaScript can read it, so `&lt;script>` tags go **after all the page content**, just **before the closing** `&lt;/body>` tag.
+
+      The script tag can **contain JavaScript**…
+      
+      ```HTML
+        &lt;script>
+          document.body.innerHTML = "&lt;h1&gt;A heading&lt;h1&gt;";
+        &lt;/script>
+      &lt;/body>
+      ```
+
+      …or point to a **separate JavaScript file**. Here, "myscripts.js" is stored in a "scripts" folder on the website:
+      
+      ```HTML
+        &lt;script src="javascript/myscripts.js">&lt;/script>
+      &lt;/body>
+      ```
 		</section>
   </section>
 
